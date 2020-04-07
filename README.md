@@ -16,4 +16,4 @@ In de Prototypes map zijn diverse prototypes voor het concept te vinden. Momente
 **Thomas Dwarshuis** - Team member - https://github.com/ThomasHBOICT  
 **Daan Bankers** - Team member - https://github.com/daanbankers1  
 **Charly Vos** - Team member - https://github.com/Charlyvos  
-**Nick Graus** - Team member - ?  
+**Nick Graus** - Team member - https://github.com/NickGraus
