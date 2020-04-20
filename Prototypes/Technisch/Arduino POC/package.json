@@ -11,6 +11,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "johnny-five": "^1.4.0",
+    "jscs": "^3.0.7",
+    "nodebots-interchange": "^2.0.1",
     "socket.io": "^2.3.0"
   }
 }
