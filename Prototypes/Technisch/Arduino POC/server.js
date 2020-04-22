@@ -45,16 +45,17 @@ io.on('connection', (socket) =>
         io.emit('boardInfo', connectedBoard.isReady);
     })
 
+    // Function that switches between the 2 availible modes
     socket.on("modeSwitch", () =>
     {
-      switch (mode)
+      switch (mode) // Check the current mode
       {
-        case 0:
+        case 0: // Set the mode to 1
           mode = 1;
           break;
 
         case 1:
-          mode = 0;
+          mode = 0; // Set the mode to 0
           break;
       }
     })
@@ -74,7 +75,7 @@ board.on("ready", () => {
   proximity.on("change", () => {
     const {centimeters, inches} = proximity;
 
-    switch (mode)
+    switch (mode) // Check the current mode to know what information to send
     {
       case 0:
         io.emit("rangeUpdate", checkForRange(centimeters));

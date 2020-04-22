@@ -13,7 +13,7 @@ socket.on('boardInfo', (boardInfo) =>
 
 socket.on('rangeUpdate', (objectInRange) =>
 {
-    switch (mode)
+    switch (mode) // Check the current mode
     {
         case 0:
             if (objectInRange != inRange)
@@ -44,9 +44,10 @@ const checkForBoards = () =>
  */
 const setDisplayMode = () =>
 {
-    switch (inRange)
+    switch (inRange) // Check if there is an object in range
     {
         case true:
+            // Set the DOM elements for when an object is in range
         document.body.style.background = "white";
         document.body.style.color = "black";
         mainText.innerHTML = `Hey! Something is in range of the sensor, yay!`;
@@ -54,6 +55,7 @@ const setDisplayMode = () =>
         break;
 
         case false:
+            // Set the DOM elements for when there is no object in range
         document.body.style.background = "rgb(14, 13, 16)";
         document.body.style.color = "white";
         mainText.innerHTML = `There is nobody here :(`;
@@ -77,18 +79,19 @@ const setBackgroundAlpha = (alpha) =>
  */
 const switchMode = () =>
 {
-    switch (mode)
+    switch (mode) // Check the current mode
     {
-        case 0:
+        case 0: // Set the mode to 1
             document.body.style.background = "rgba(239,198,76,0)"
             document.body.style.color = "black";
 
             mainText.innerHTML = `Sensor watching range`;
             subText.innerHTML = `Try moving an object in front of the sensor`
+            
             mode = 1;
             break;
         
-        case 1:
+        case 1: // Set the mode to 0
             inRange = false;
             setDisplayMode();
             
@@ -100,9 +103,9 @@ const switchMode = () =>
 }
 
 /**
- * A function that ...
- * @param {Number} distance 
- * @param {Number} startingRange 
+ * A function that checks the range an object is from the sensor from the moment it comes into a minimum set range
+ * @param {Number} distance The distance the object is from the sensor, given by the Arduino sensor from the server
+ * @param {Number} startingRange The range that is the starting point of the check, all objects closer than this value will be checked
  * 
  */
 const checkRange = (distance, startingRange = 30) =>
