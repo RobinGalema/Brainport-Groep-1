@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <h1>Arduino Range Sensor Poc</h1>
-    <button onclick="checkForBoards()">Check for connected boards</button>
-
+    <button onclick="switchMode()">Change mode</button>
+    <section class="contentContainer">
+        <h1 id="mainText">There is nobody here :(</h1>
+        <p id="subText">Come closer to the sensor to activate it</p>
+    </section>
     <script src="/socket.io/socket.io.js"></script>
     <script src="app.js"></script>
 </body>

@@ -11,6 +11,7 @@ const board = new Board();
 
 // Global variables
 let isSomebodyInRange = false;
+let mode  = 0;
 
 
 //  --- Page Loading ---
@@ -43,6 +44,20 @@ io.on('connection', (socket) =>
         console.log("   --> Sending board info to client");
         io.emit('boardInfo', connectedBoard.isReady);
     })
+
+    socket.on("modeSwitch", () =>
+    {
+      switch (mode)
+      {
+        case 0:
+          mode = 1;
+          break;
+
+        case 1:
+          mode = 0;
+          break;
+      }
+    })
 });
 
 
@@ -58,7 +73,17 @@ board.on("ready", () => {
   // Code that runs when the value returned by the proximity sensor changes
   proximity.on("change", () => {
     const {centimeters, inches} = proximity;
-    checkForRange(centimeters);
+
+    switch (mode)
+    {
+      case 0:
+        io.emit("rangeUpdate", checkForRange(centimeters));
+        break;
+
+      case 1:
+        io.emit("rangeUpdate", centimeters);
+        break;
+    }
   });
 });
 
@@ -67,21 +92,48 @@ board.on("ready", () => {
 //  --- Functions ---
 
 /**
- * A function that checks if there is an object in range of the sensor
+ * A function that checks if an object enters or leaves the minimum range of the sensor
  * 
  * @param {Number} centimeters The amount of centimeters the nearest object is to the sensor, given by the Arduino sensor in the proximity.on function
- * @param {Number} range The range at which an object is considered in range
+ * @param {Number} range The range at which an object is considered in range (default = 30cm)
+ * 
+ * @returns {boolean} True if there something entered or left the range, False if nothing has changed
  */
-const checkForRange = (centimeters, range = 30) =>
+const checkForRangeUpdate = (centimeters, range = 30) =>
 {
   if (centimeters <= range && !isSomebodyInRange)
   {
+      console.log("");
       console.log("|--> Something came in range of the sensor");
       isSomebodyInRange = true;
+      return true;
   }
   else if (centimeters > range && isSomebodyInRange)
   {
-    console.log("     |---> Something left the range of the sensor");
-    isSomebodyInRange = false;
+      console.log("     |---> Something left the range of the sensor");
+      console.log("");
+      isSomebodyInRange = false;
+      return true;
+  }
+  return false;
+}
+
+/**
+ * A function that can constantly check if an object is in range. (if you want to check when an object leaves or enters the range, use checkForRangeUpdate() instead)
+ * 
+ * @param {Number} centimeters The amount of centimeters the nearest object is to the sensor, given by the Arduino sensor in the proximity.on function
+ * @param {Number} range The range at which an object is considered in range (default = 30cm)
+ * 
+ * @returns {boolean} True if there is an object in range, false if there is no object in range
+ */
+const checkForRange = (centimeters, range = 30) =>
+{
+  if (centimeters <= range)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
   }
 }
