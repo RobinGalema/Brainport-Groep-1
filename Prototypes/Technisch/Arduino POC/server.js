@@ -9,6 +9,7 @@ var publicDir = require('path').join(__dirname,'/public');
 const { Board, Proximity } = require("johnny-five");
 const board = new Board();
 
+let isSomebodyInRange = false;
 
 // Set the page to index.html
 app.get('/', function(req, res){
@@ -35,7 +36,7 @@ io.on('connection', (socket) =>
     })
 });
 
-/*
+
 board.on("ready", () => {
   const proximity = new Proximity({
     controller: "HCSR04",
@@ -44,10 +45,15 @@ board.on("ready", () => {
 
   proximity.on("change", () => {
     const {centimeters, inches} = proximity;
-    console.log("Proximity: ");
-    console.log("  cm  : ", centimeters);
-    console.log("  in  : ", inches);
-    console.log("-----------------");
+    if (centimeters <= 30 && !isSomebodyInRange)
+    {
+        console.log("Iemand is in range gekomen");
+        isSomebodyInRange = true;
+    }
+    else if (centimeters > 30 && isSomebodyInRange)
+    {
+      console.log("Iemand is uit de range gelopen");
+      isSomebodyInRange = false;
+    }
   });
 });
-*/
