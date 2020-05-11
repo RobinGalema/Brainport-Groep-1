@@ -17,7 +17,7 @@
         "adress" : "High Tech Campus 29",
         "zip" : "5656 AE",
         "city" : "Eindhoven",
-        "labels" : "startup, healthcare",
+        "labels" : ["startup", "healthcare"],
         "website" : "https://www.bambi-medical.com/",
         "marker" : {
             "lat" : 51.411551,
