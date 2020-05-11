@@ -1,0 +1,28 @@
+{
+    "companies" :[
+    {
+        "name" : "Amber Mobility",
+        "adress" : "Zwaanstraat 31",
+        "zip" : "5651GW",
+        "city" : "Eindhoven",
+        "labels" : ["starup", "mobility"],
+        "website" : "https://driveamber.com/",
+        "marker" : {
+            "lat" : 51.449285,
+            "long": 5.453263
+        }
+    },
+    {
+        "name" : "Bambi Medical",
+        "adress" : "High Tech Campus 29",
+        "zip" : "5656 AE",
+        "city" : "Eindhoven",
+        "labels" : "startup, healthcare",
+        "website" : "https://www.bambi-medical.com/",
+        "marker" : {
+            "lat" : 51.411551,
+            "long" : 5.454805
+        }
+    }
+]
+}
