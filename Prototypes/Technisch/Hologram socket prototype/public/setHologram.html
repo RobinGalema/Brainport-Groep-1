@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        var socket = io();
+      
+        function actie(nummer) {
+          socket.emit("commando", nummer);
+        }
+          socket.on('commando', function(data) {
+        });
+      </script>
+</head>
+<body>
+    <button id="hologram1" onclick="actie(1)">hologram1</button>
+    <button id="hologram2" onclick="actie(2)">hologram2</button>
+    <button id="hologram3" onclick="actie(3)">hologram3</button>
+    <button id="hologram4" onclick="actie(4)">hologram4</button>
+</body>
+</html>
