@@ -28,7 +28,7 @@ window.onload = () => {
     MakeMap();
     CreateMarkers();
     loadData();
-    filterMarkers();
+    filterMarkers(["healthcare"]);
     addMarkersWithFilter();
   });
 };
@@ -121,7 +121,7 @@ const filterMarkers = (filters = []) =>
       });
 
       console.log(`The company ${company.name} will be displayed? ===> ${willBeDisplayed}`)
-      console.log("");
+      console.log("-------------------------------------------");
      
       // Check if the company should be displayed on the map based on the filters
       if (willBeDisplayed)
