@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +13,40 @@
     <div id="img"></div>
 
     <script>
-        var socket = io();
+        let hologrammen = ["url('img/leeuw.jpg')", "url('img/olifant.jpg')", "url('img/giraffe.jpg')",
+            "url('img/aap.jpg')"
+        ]
+        const socket = io();
 
-        socket.on('commando', function(data) {
-            console.log("Er komt " + data + " binnen");
+        socket.on('commando', function (data) {
+            console.log(`Er komt ${data} binnen`);
 
-            if (data == 1) {$("#img").css("background-image", "url('img/leeuw.jpg')");} 
-            else if (data == 2) {$("#img").css("background-image", "url('img/olifant.jpg')");}
-            else if (data == 3) {$("#img").css("background-image", "url('img/leeuw.jpg')");} 
-            else if (data == 4) {$("#img").css("background-image", "url('img/leeuw.jpg')");} 
-        });
+            switch (data) {
+                case 1: {
+                    $("#img").css("background-image", hologrammen[0]);
+                    
+                    break;
+                }
+                case 2: {
+                    $("#img").css("background-image", hologrammen[1]);
+                    
+                    break;
+                }
+                case 3: {
+                    $("#img").css("background-image", hologrammen[2]);
+                    break;
+                }
+                case 4: {
+                    $("#img").css("background-image", hologrammen[3]);
+                    break;
+                }
+                default: {
+                    $("#img").css("background-image", hologrammen[0]);
+                    break;
+                }
+            }
+        })
     </script>
-</body>
+    </body>
+
 </html>

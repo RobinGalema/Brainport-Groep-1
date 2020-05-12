@@ -8,13 +8,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script>
-        var socket = io();
-      
-        function actie(nummer) {
-          socket.emit("commando", nummer);
-        }
-          socket.on('commando', function(data) {
-        });
+        const socket = io();
+
+        const actie = nummer => socket.emit("commando", nummer)
+
+        socket.on('commando', function(data) {});
       </script>
 </head>
 <body>
