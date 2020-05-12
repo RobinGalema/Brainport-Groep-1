@@ -60,5 +60,13 @@ const CreateMarkers = () => {
     };
     let marker = new google.maps.Marker({ position: uluru, map: map });
     markers.push(marker);
+    var infoWindow = new google.maps.InfoWindow({
+      content:"Adres: " + element.adress
+    });
+    marker.addListener("click", function () {
+      infoWindow.open(map, marker);
+    });
   });
 };
+
+

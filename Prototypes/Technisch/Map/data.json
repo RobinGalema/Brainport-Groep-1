@@ -5,7 +5,7 @@
         "adress" : "Zwaanstraat 31",
         "zip" : "5651GW",
         "city" : "Eindhoven",
-        "labels" : ["starup", "mobility"],
+        "labels" : ["startup", "mobility"],
         "website" : "https://driveamber.com/",
         "marker" : {
             "lat" : 51.449285,
