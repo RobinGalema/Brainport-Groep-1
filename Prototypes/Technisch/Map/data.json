@@ -83,6 +83,78 @@
             "lat" : 51.474673,
             "long" : 5.623893
         }
+    },
+    {
+        "name" : "BeschermdWonen",
+        "adress" : "Amroth 14a",
+        "zip" : "5663RD",
+        "city": "Geldrop",
+        "labels" : ["startup", "residence", "healthcare", "dutch-only"],
+        "website" : "https://beschermdwonen.nl/",
+        "marker" : {
+            "lat" : 51.410342,
+            "long" : 5.555198
+        }
+    },
+    {
+        "name" : "Dutch Coding Company",
+        "adress" : "Kastanjelaan 400",
+        "zip" : "5616LZ",
+        "city": "Eindhoven",
+        "labels" : ["startup", "software", "app-development"],
+        "website" : "https://dutchcodingcompany.com/",
+        "marker" : {
+            "lat" : 51.444634,
+            "long" : 5.460149
+        }
+    },
+    {
+        "name" : "Eventix",
+        "adress" : "Horsten 1",
+        "zip" : "5612AX",
+        "city": "Eindhoven",
+        "labels" : ["startup", "software"],
+        "website" : "https://eventix.nl/",
+        "marker" : {
+            "lat" : 51.449653,
+            "long" : 5.494719
+        }
+    },
+    {
+        "name" : "Fullcircle",
+        "adress" : "Kastanjelaan 400",
+        "zip" : "5616LZ",
+        "city": "Eindhoven",
+        "labels" : ["startup", "software", "app-development"],
+        "website" : "https://fullcircle.io/",
+        "marker" : {
+            "lat" : 51.444582,
+            "long" : 5.459597
+        }
+    },
+    {
+        "name" : "Tracklete",
+        "adress" : "Jan van de Capellelaan 102",
+        "zip" : "5642LG",
+        "city": "Eindhoven",
+        "labels" : ["startup", "sports", "software", "data-analysis"],
+        "website" : "https://tracklete.io/",
+        "marker" : {
+            "lat" : 51.438071,
+            "long" : 5.518412
+        }
+    },
+    {
+        "name" : "Hable",
+        "adress" : " Het Kranenveld 12",
+        "zip" : "5612AZ",
+        "city": "Eindhoven",
+        "labels" : ["startup", "technology", "mobile"],
+        "website" : "https://www.iamhable.com/",
+        "marker" : {
+            "lat" : 51.446019,
+            "long" : 5.487341
+        }
     }
 ]
 }
