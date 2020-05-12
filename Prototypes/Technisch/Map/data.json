@@ -23,6 +23,66 @@
             "lat" : 51.411551,
             "long" : 5.454805
         }
+    },
+    {
+        "name" : "BitSensor",
+        "adress" : "Multimediapaviljoen, Horsten 1",
+        "zip" : "5612AX",
+        "city": "Eindhoven",
+        "labels" : ["startup", "technology", "security"],
+        "website" : "https://bitsensor.io/",
+        "marker" : {
+            "lat" : 51.449708,
+            "long" : 5.494750
+        }
+    },
+    {
+        "name" : "Lightyear",
+        "adress" : "Automotive Campus 70",
+        "zip" : "5708JZ",
+        "city": "Helmond",
+        "labels" : ["startup", "innovation", "mobility", "cars", "eco-friendly"],
+        "website" : "https://lightyear.one/",
+        "marker" : {
+            "lat" : 51.474223,
+            "long" : 5.619834
+        }
+    },
+    {
+        "name" : "Plasmacure",
+        "adress" : "High Tech Campus 12",
+        "zip" : "5656AE",
+        "city": "Eindhoven",
+        "labels" : ["startup", "healthcare", "innovation"],
+        "website" : "https://www.plasmacure.nl/en/",
+        "marker" : {
+            "lat" : 51.411781,
+            "long" : 5.452893
+        }
+    },
+    {
+        "name" : "Xeltis",
+        "adress" : "De Lismortel 31",
+        "zip" : "5612AR",
+        "city": "Eindhoven",
+        "labels" : ["healthcare", "technology"],
+        "website" : "http://xeltis.com/",
+        "marker" : {
+            "lat" : 51.448429,
+            "long" : 5.485380
+        }
+    },
+    {
+        "name" : "SPIKE",
+        "adress" : "Automotive Campus 30",
+        "zip" : "5708JZ",
+        "city": "Helmond",
+        "labels" : ["startup", "mobility", "eco-friendly"],
+        "website" : "https://spike.global/",
+        "marker" : {
+            "lat" : 51.474673,
+            "long" : 5.623893
+        }
     }
 ]
 }
