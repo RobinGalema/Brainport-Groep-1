@@ -25,6 +25,8 @@ window.onload = () => {
     console.log(data);
     MakeMap();
     CreateMarkers();
+    makeLabelList();
+    makeFilterCheckbox();
   });
 };
 
@@ -61,21 +63,10 @@ const CreateMarkers = () => {
     let marker = new google.maps.Marker({ position: uluru, map: map });
     markers.push(marker);
     var infoWindow = new google.maps.InfoWindow({
-      content:"Adres: " + element.adress
+      content: "Adres: " + element.adress,
     });
     marker.addListener("click", function () {
       infoWindow.open(map, marker);
     });
   });
 };
-
-
-const CloseMenu = () =>{
- const menu = document.getElementById("menu");
- menu.style.display = 'none';
-}
-
-const OpenMenu = () =>{
-  const menu = document.getElementById("menu");
-  menu.style.display = 'flex';
- }

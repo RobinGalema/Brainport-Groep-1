@@ -1,160 +1,160 @@
 {
-    "companies" :[
+  "companies": [
     {
-        "name" : "Amber Mobility",
-        "adress" : "Zwaanstraat 31",
-        "zip" : "5651GW",
-        "city" : "Eindhoven",
-        "labels" : ["startup", "mobility"],
-        "website" : "https://driveamber.com/",
-        "marker" : {
-            "lat" : 51.449285,
-            "long": 5.453263
-        }
+      "name": "Amber Mobility",
+      "adress": "Zwaanstraat 31",
+      "zip": "5651GW",
+      "city": "Eindhoven",
+      "labels": ["startup", "mobility"],
+      "website": "https://driveamber.com/",
+      "marker": {
+        "lat": 51.449285,
+        "long": 5.453263
+      }
     },
     {
-        "name" : "Bambi Medical",
-        "adress" : "High Tech Campus 29",
-        "zip" : "5656 AE",
-        "city" : "Eindhoven",
-        "labels" : ["startup", "healthcare"],
-        "website" : "https://www.bambi-medical.com/",
-        "marker" : {
-            "lat" : 51.411551,
-            "long" : 5.454805
-        }
+      "name": "Bambi Medical",
+      "adress": "High Tech Campus 29",
+      "zip": "5656 AE",
+      "city": "Eindhoven",
+      "labels": ["startup", "healthcare"],
+      "website": "https://www.bambi-medical.com/",
+      "marker": {
+        "lat": 51.411551,
+        "long": 5.454805
+      }
     },
     {
-        "name" : "BitSensor",
-        "adress" : "Multimediapaviljoen, Horsten 1",
-        "zip" : "5612AX",
-        "city": "Eindhoven",
-        "labels" : ["startup", "technology", "security"],
-        "website" : "https://bitsensor.io/",
-        "marker" : {
-            "lat" : 51.449708,
-            "long" : 5.494750
-        }
+      "name": "BitSensor",
+      "adress": "Multimediapaviljoen, Horsten 1",
+      "zip": "5612AX",
+      "city": "Eindhoven",
+      "labels": ["startup", "technology", "security"],
+      "website": "https://bitsensor.io/",
+      "marker": {
+        "lat": 51.449708,
+        "long": 5.49475
+      }
     },
     {
-        "name" : "Lightyear",
-        "adress" : "Automotive Campus 70",
-        "zip" : "5708JZ",
-        "city": "Helmond",
-        "labels" : ["startup", "innovation", "mobility", "cars", "eco-friendly"],
-        "website" : "https://lightyear.one/",
-        "marker" : {
-            "lat" : 51.474223,
-            "long" : 5.619834
-        }
+      "name": "Lightyear",
+      "adress": "Automotive Campus 70",
+      "zip": "5708JZ",
+      "city": "Helmond",
+      "labels": ["startup", "innovation", "mobility", "cars", "eco-friendly"],
+      "website": "https://lightyear.one/",
+      "marker": {
+        "lat": 51.474223,
+        "long": 5.619834
+      }
     },
     {
-        "name" : "Plasmacure",
-        "adress" : "High Tech Campus 12",
-        "zip" : "5656AE",
-        "city": "Eindhoven",
-        "labels" : ["startup", "healthcare", "innovation"],
-        "website" : "https://www.plasmacure.nl/en/",
-        "marker" : {
-            "lat" : 51.411781,
-            "long" : 5.452893
-        }
+      "name": "Plasmacure",
+      "adress": "High Tech Campus 12",
+      "zip": "5656AE",
+      "city": "Eindhoven",
+      "labels": ["startup", "healthcare", "innovation"],
+      "website": "https://www.plasmacure.nl/en/",
+      "marker": {
+        "lat": 51.411781,
+        "long": 5.452893
+      }
     },
     {
-        "name" : "Xeltis",
-        "adress" : "De Lismortel 31",
-        "zip" : "5612AR",
-        "city": "Eindhoven",
-        "labels" : ["healthcare", "technology"],
-        "website" : "http://xeltis.com/",
-        "marker" : {
-            "lat" : 51.448429,
-            "long" : 5.485380
-        }
+      "name": "Xeltis",
+      "adress": "De Lismortel 31",
+      "zip": "5612AR",
+      "city": "Eindhoven",
+      "labels": ["healthcare", "technology"],
+      "website": "http://xeltis.com/",
+      "marker": {
+        "lat": 51.448429,
+        "long": 5.48538
+      }
     },
     {
-        "name" : "SPIKE",
-        "adress" : "Automotive Campus 30",
-        "zip" : "5708JZ",
-        "city": "Helmond",
-        "labels" : ["startup", "mobility", "eco-friendly"],
-        "website" : "https://spike.global/",
-        "marker" : {
-            "lat" : 51.474673,
-            "long" : 5.623893
-        }
+      "name": "SPIKE",
+      "adress": "Automotive Campus 30",
+      "zip": "5708JZ",
+      "city": "Helmond",
+      "labels": ["startup", "mobility", "eco-friendly"],
+      "website": "https://spike.global/",
+      "marker": {
+        "lat": 51.474673,
+        "long": 5.623893
+      }
     },
     {
-        "name" : "BeschermdWonen",
-        "adress" : "Amroth 14a",
-        "zip" : "5663RD",
-        "city": "Geldrop",
-        "labels" : ["startup", "residence", "healthcare", "dutch-only"],
-        "website" : "https://beschermdwonen.nl/",
-        "marker" : {
-            "lat" : 51.410342,
-            "long" : 5.555198
-        }
+      "name": "BeschermdWonen",
+      "adress": "Amroth 14a",
+      "zip": "5663RD",
+      "city": "Geldrop",
+      "labels": ["startup", "residence", "healthcare", "dutch-only"],
+      "website": "https://beschermdwonen.nl/",
+      "marker": {
+        "lat": 51.410342,
+        "long": 5.555198
+      }
     },
     {
-        "name" : "Dutch Coding Company",
-        "adress" : "Kastanjelaan 400",
-        "zip" : "5616LZ",
-        "city": "Eindhoven",
-        "labels" : ["startup", "software", "app-development"],
-        "website" : "https://dutchcodingcompany.com/",
-        "marker" : {
-            "lat" : 51.444634,
-            "long" : 5.460149
-        }
+      "name": "Dutch Coding Company",
+      "adress": "Kastanjelaan 400",
+      "zip": "5616LZ",
+      "city": "Eindhoven",
+      "labels": ["startup", "software", "app-development"],
+      "website": "https://dutchcodingcompany.com/",
+      "marker": {
+        "lat": 51.444634,
+        "long": 5.460149
+      }
     },
     {
-        "name" : "Eventix",
-        "adress" : "Horsten 1",
-        "zip" : "5612AX",
-        "city": "Eindhoven",
-        "labels" : ["startup", "software"],
-        "website" : "https://eventix.nl/",
-        "marker" : {
-            "lat" : 51.449653,
-            "long" : 5.494719
-        }
+      "name": "Eventix",
+      "adress": "Horsten 1",
+      "zip": "5612AX",
+      "city": "Eindhoven",
+      "labels": ["startup", "software"],
+      "website": "https://eventix.nl/",
+      "marker": {
+        "lat": 51.449653,
+        "long": 5.494719
+      }
     },
     {
-        "name" : "Fullcircle",
-        "adress" : "Kastanjelaan 400",
-        "zip" : "5616LZ",
-        "city": "Eindhoven",
-        "labels" : ["startup", "software", "app-development"],
-        "website" : "https://fullcircle.io/",
-        "marker" : {
-            "lat" : 51.444582,
-            "long" : 5.459597
-        }
+      "name": "Fullcircle",
+      "adress": "Kastanjelaan 400",
+      "zip": "5616LZ",
+      "city": "Eindhoven",
+      "labels": ["startup", "software", "app-development"],
+      "website": "https://fullcircle.io/",
+      "marker": {
+        "lat": 51.444582,
+        "long": 5.459597
+      }
     },
     {
-        "name" : "Tracklete",
-        "adress" : "Jan van de Capellelaan 102",
-        "zip" : "5642LG",
-        "city": "Eindhoven",
-        "labels" : ["startup", "sports", "software", "data-analysis"],
-        "website" : "https://tracklete.io/",
-        "marker" : {
-            "lat" : 51.438071,
-            "long" : 5.518412
-        }
+      "name": "Tracklete",
+      "adress": "Jan van de Capellelaan 102",
+      "zip": "5642LG",
+      "city": "Eindhoven",
+      "labels": ["startup", "sports", "software", "data-analysis"],
+      "website": "https://tracklete.io/",
+      "marker": {
+        "lat": 51.438071,
+        "long": 5.518412
+      }
     },
     {
-        "name" : "Hable",
-        "adress" : " Het Kranenveld 12",
-        "zip" : "5612AZ",
-        "city": "Eindhoven",
-        "labels" : ["startup", "technology", "mobile"],
-        "website" : "https://www.iamhable.com/",
-        "marker" : {
-            "lat" : 51.446019,
-            "long" : 5.487341
-        }
+      "name": "Hable",
+      "adress": " Het Kranenveld 12",
+      "zip": "5612AZ",
+      "city": "Eindhoven",
+      "labels": ["startup", "technology", "mobile"],
+      "website": "https://www.iamhable.com/",
+      "marker": {
+        "lat": 51.446019,
+        "long": 5.487341
+      }
     }
-]
+  ]
 }
