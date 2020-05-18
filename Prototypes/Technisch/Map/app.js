@@ -1,6 +1,10 @@
 let jsonData;
 let markers = [];
 let displayedCompanies = [];
+let checkboxes;
+let currentFilters = [];
+
+// ---- File and window loading ----
 
 /**
  * loads json, executes function, dabs on haters
@@ -21,17 +25,23 @@ const fetchJSONFile = (path, callback) => {
   httpRequest.send();
 };
 
+// W.I.P => window.onload needs some changes when all functions are done
 window.onload = () => {
   fetchJSONFile("data.json", function (data) {
     jsonData = data;
     console.log(data);
     MakeMap();
-    CreateMarkers();
+    CreateAllMarkers();
     loadData();
-    filterMarkers(["healthcare"]);
+    filterMarkers();
     addMarkersWithFilter();
   });
+
+    SetupCheckboxes();
 };
+
+
+// ---- Functions ----
 
 /**
  * executes when api is loaded
@@ -57,7 +67,7 @@ const MakeMap = () => {
 /**
  * creates makers and pushes them to markers array
  */
-const CreateMarkers = () => {
+const CreateAllMarkers = () => {
   jsonData.companies.forEach((element) => {
     var uluru = {
       lat: element.marker.lat,
@@ -130,11 +140,15 @@ const filterMarkers = (filters = []) =>
       }
 
     })
+
+    addMarkersWithFilter();
   }
   else
   {
     console.log("There are no filters being applied");
+    CreateAllMarkers();
   }
+
 
   console.log(`The new company list:`);
   console.log(displayedCompanies);
@@ -176,7 +190,6 @@ const addMarkersWithFilter = () =>
   });
 }
 
-
 const CloseMenu = () =>{
  const menu = document.getElementById("menu");
  menu.style.display = 'none';
@@ -185,4 +198,43 @@ const CloseMenu = () =>{
 const OpenMenu = () =>{
   const menu = document.getElementById("menu");
   menu.style.display = 'flex';
+ }
+
+
+// -----------
+// !! WIP !!
+// -----------
+
+ /**
+  * A function that adds eventlisteners to all checkboxes to make them update the markers on the map based on the tag of the checkbox
+  */
+const SetupCheckboxes = () =>
+ {
+   checkboxes = document.getElementsByClassName("labelCheckBox")
+   console.log(checkboxes);
+   checkboxes = Array.from(checkboxes);
+
+   checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function()
+    {
+      if (this.checked)
+      {
+          if (!currentFilters.includes(checkbox.value))
+          {
+            currentFilters.push(checkbox.value);
+          }
+      }
+      else
+      {
+        if (currentFilters.includes(checkbox.value))
+        {
+           let index = currentFilters.indexOf(checkbox.value);
+           currentFilters.splice(index, 1);
+        }
+      }
+
+      filterMarkers(currentFilters);
+      console.log(currentFilters);
+    })
+   });
  }
