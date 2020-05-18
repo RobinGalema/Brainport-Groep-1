@@ -3,6 +3,7 @@ let markers = [];
 let displayedCompanies = [];
 let checkboxes;
 let currentFilters = [];
+let searchBox;
 
 // ---- File and window loading ----
 
@@ -38,6 +39,7 @@ window.onload = () => {
   });
 
     SetupCheckboxes();
+    SetupSearchBox("searchBox");
 };
 
 
@@ -146,6 +148,7 @@ const filterMarkers = (filters = []) =>
   else
   {
     console.log("There are no filters being applied");
+    displayedCompanies = jsonData.companies;
     CreateAllMarkers();
   }
 
@@ -238,3 +241,49 @@ const SetupCheckboxes = () =>
     })
    });
  }
+
+/**
+ * A function that adds an eventlistener to the searchbox, place this in window.onload
+ * @param {String} idName The name of the id given to the input DOM element
+ * 
+ * @example SetupSearchBox("searchBox");
+ */
+const SetupSearchBox = (idName) =>
+{
+  searchBox = document.getElementById(idName);
+
+  // Add an eventlistener that runs a function every time the value of the inputbox changes
+  searchBox.addEventListener('input', function()
+  {
+    GetSearchResults();
+  })
+}
+
+/**
+ * A function that uses the inputfield of the button to filters the list of companies by comparing the name of the company to the input value
+ */
+const GetSearchResults = () =>
+{
+  // Reset all markers based on the current applied filters
+  filterMarkers(currentFilters);
+  addMarkersWithFilter();
+
+  // Creating search input variable to search witouth being case sensitive
+  let input = new RegExp(searchBox.value, `i`);
+  let searchResults = [];
+  
+  // debug
+  console.log(displayedCompanies);
+
+  displayedCompanies.forEach((company) =>
+  {
+    if (company.name.match(input)) // Check if there is a company that has the search input in their name
+    {
+      searchResults.push(company);
+    }
+  });
+
+  // Display only the markers that match the search result
+  displayedCompanies = searchResults;
+  addMarkersWithFilter();
+}
