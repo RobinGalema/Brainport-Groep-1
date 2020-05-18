@@ -13,17 +13,11 @@
     <div id="menu">
         <button id="menuCloseButton" onclick="CloseMenu()">X</button>
         <div id="menuContent">
-            
-            <p>FILTER MAP:</p>
-            <ul>
-                <input type="checkbox" value="healthcare" class="labelCheckBox">
-                <label> Healthcare</label><br>
-                <input type="checkbox" value="security" class="labelCheckBox">
-                <label> Security</label><br>
-                <input type="checkbox" value="technology" class="labelCheckBox">
-                <label> Technology</label><br>
-            </ul>
 
+            <p>FILTER MAP:</p>
+
+            <div id="checkBoxContainer">
+            </div>
             <p>SEARCH:</p>
             <input type="text" id="searchBox">
         </div>
@@ -32,6 +26,7 @@
     <script src="app.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjzV8Ews5b4xZ93n9eeQMSafloEzuGlYQ&callback=initMap"></script>
+    <script src="menu.js"></script>
 
 </body>
 
