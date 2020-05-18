@@ -8,9 +8,9 @@ let searchBox;
 // ---- File and window loading ----
 
 /**
- * loads json, executes function, dabs on haters
- * @param {string} path path to json file
- * @param {function} callback DIT IS EEN CALLBACK
+ * Loads a json file and then performs a callback function when the data is loaded
+ * @param {string} path Path to the json file
+ * @param {function} callback Function that runs when the data is done loading
  */
 const fetchJSONFile = (path, callback) => {
   var httpRequest = new XMLHttpRequest();
@@ -30,14 +30,19 @@ const fetchJSONFile = (path, callback) => {
 window.onload = () => {
   fetchJSONFile("data.json", function (data) {
     jsonData = data;
+    
+    // debug
     console.log(data);
+
+    // Map loading and creating of markers
     MakeMap();
     CreateAllMarkers();
     loadData();
-    filterMarkers();
-    addMarkersWithFilter();
+    //filterMarkers();
+    //addMarkersWithFilter();
   });
 
+    // Setting up DOM elements
     SetupCheckboxes();
     SetupSearchBox("searchBox");
 };
@@ -48,7 +53,7 @@ window.onload = () => {
 /**
  * executes when api is loaded
  */
-var initMap = () => {
+const initMap = () => {
   console.log("maps API loaded.");
 };
 
@@ -86,6 +91,9 @@ const CreateAllMarkers = () => {
   });
 };
 
+/**
+ * Pushes all the companies from the JSON file into an array
+ */
 const loadData = () => 
 {
   jsonData.companies.forEach(element => {

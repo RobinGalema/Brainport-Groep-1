@@ -62,3 +62,26 @@ body{
   width: 110vw;
   z-index: 0;
 }
+
+#searchBox
+{
+    border: none;
+    background: rgb(224, 224, 224);
+    height: 25px;
+    border-radius: 20px;
+    padding-left: 10px;
+    transition-duration: 500ms;
+}
+
+#searchBox:hover
+{
+    background: rgb(175, 175, 175);
+}
+
+#searchBox:focus
+{
+    background: rgb(224, 224, 224);
+    border: solid;
+    border-color: rgb(76, 76, 76);
+    border-width: 1px;
+}
