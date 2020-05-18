@@ -27,6 +27,7 @@ window.onload = () => {
     CreateMarkers();
     makeLabelList();
     makeFilterCheckbox();
+    companyInfo();
   });
 };
 

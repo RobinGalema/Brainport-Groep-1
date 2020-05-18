@@ -32,12 +32,15 @@ body{
 .openbutton{
     transform: rotate(90deg);
 }
+
+
 /* content for the menu */
 
 #menuContent{
     margin: 20px;
     margin-top: 5vh;
     overflow: visible;
+    overflow: scroll;
 }
 
 .checkBoxContainer{
@@ -57,4 +60,16 @@ body{
   height: 100vh;
   width: 100vw;
   z-index: 0;
+}
+
+.infoContainer{
+    padding: 5px;
+    border-radius: 6px;
+    width: 90%;
+    margin: 10px;
+    background-color: rgb(193, 193, 193);
+}
+
+.infoContainer p{
+    margin: 5px;
 }

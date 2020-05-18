@@ -13,14 +13,13 @@ const OpenMenu = () => {
   menu.style.display = "flex";
 };
 
-
 let labelList = [];
 /**
-* this puts all labels in an array
-*/
+ * this puts all labels in an array
+ */
 const makeLabelList = () => {
   jsonData.companies.forEach((element) => {
-    //console.log(element.labels);
+   
     element.labels.forEach((label) => {
       if (!labelList.includes(label)) {
         labelList.push(label);
@@ -30,22 +29,20 @@ const makeLabelList = () => {
   console.log(labelList);
 };
 
-
 let boxContainer = document.getElementById("checkBoxContainer");
 /**
  * this puts all items from an array into labels and appends them to checkboxcontainer
  */
 const makeFilterCheckbox = () => {
   labelList.forEach((element) => {
-    // maak checkboxes
+    // creates checkbox
     var checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     checkBox.value = element;
     checkBox.className = "labelCheckBox";
     console.log("checkbox made");
-    // /boxContainer.appendChild(checkBox);
 
-    // maak label voor checkbox
+    // creates label 
     var label = document.createElement("label");
     label.id = "checkBoxLabel";
     boxContainer.appendChild(label);
@@ -54,6 +51,39 @@ const makeFilterCheckbox = () => {
   });
 };
 
-// maak tekstvlakken met info over alle bedrijven
 
+const menuContent = document.getElementById("menuContent");
+/**
+ * makes textboxes for each company
+ */
+const companyInfo = () => {
+  jsonData.companies.forEach((element) => {
+    let infoContainer = document.createElement("div");
+    infoContainer.className = "infoContainer";
+    menuContent.appendChild(infoContainer);
 
+    let companyNameText = createPElement("h3", "infoText", element.name);
+    let companyAdress = createPElement("p", "infoText", element.adress);
+    let companyCity = createPElement("p", "infoText", element.city);
+    let companyWebsite = createPElement("p", "infoText", element.website);
+
+    infoContainer.appendChild(companyNameText);
+    infoContainer.appendChild(companyAdress);
+    infoContainer.appendChild(companyCity);
+    infoContainer.appendChild(companyWebsite);
+  });
+};
+
+/**
+ * creates element with json input
+ * @param {string} element element type
+ * @param {string} id element id
+ * @param {string} input text
+ */
+const createPElement = (element, id, input) => {
+  let infoText = document.createElement(element);
+  infoText.id = id;
+
+  infoText.innerHTML = input;
+  return infoText;
+};
