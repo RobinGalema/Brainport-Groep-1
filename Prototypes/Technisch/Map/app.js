@@ -38,12 +38,15 @@ window.onload = () => {
     MakeMap();
     CreateAllMarkers();
     loadData();
+    makeLabelList();
+    makeFilterCheckbox();
+    companyInfo();
+    SetupCheckboxes();
     //filterMarkers();
     //addMarkersWithFilter();
   });
 
     // Setting up DOM elements
-    SetupCheckboxes();
     SetupSearchBox("searchBox");
 };
 
@@ -200,17 +203,6 @@ const addMarkersWithFilter = () =>
     });
   });
 }
-
-const CloseMenu = () =>{
- const menu = document.getElementById("menu");
- menu.style.display = 'none';
-}
-
-const OpenMenu = () =>{
-  const menu = document.getElementById("menu");
-  menu.style.display = 'flex';
- }
-
 
 // -----------
 // !! WIP !!
