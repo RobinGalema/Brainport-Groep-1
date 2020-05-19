@@ -54,13 +54,13 @@ const DataSetup = () =>
   MakeMap();
   CreateAllMarkers();
   loadData();
-  makeLabelList();
+  Menu.makeLabelList(jsonData);
 }
 
 const PageSetup = () =>
 {
-  makeFilterCheckbox();
-  companyInfo();
+  Menu.makeFilterCheckbox();
+  Menu.companyInfo(jsonData);
   SetupCheckboxes();
   SetupSearchBox("searchBox");
   UpdateCompanyList("infoContainer");

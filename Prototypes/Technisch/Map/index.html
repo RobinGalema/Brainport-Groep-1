@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <button id="menuCloseButton" class="openbutton" onclick="OpenMenu()">III</button>
+    <button id="menuCloseButton" class="openbutton" onclick="Menu.OpenMenu()">III</button>
     <div id="menu">
-        <button id="menuCloseButton" onclick="CloseMenu()">X</button>
+        <button id="menuCloseButton" onclick="Menu.CloseMenu()">X</button>
         <div id="menuContent">
 
             <p>FILTER MAP:</p>
@@ -24,9 +24,10 @@
     </div>
     <div id="map"></div>
     <script src="app.js"></script>
+    <script src="menuModule.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjzV8Ews5b4xZ93n9eeQMSafloEzuGlYQ&callback=initMap"></script>
-    <script src="menu.js"></script>
+
 
 </body>
 
