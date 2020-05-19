@@ -4,6 +4,7 @@ let displayedCompanies = [];
 let checkboxes;
 let currentFilters = [];
 let searchBox;
+let infoBoxes = [];
 
 // ---- File and window loading ----
 
@@ -35,23 +36,35 @@ window.onload = () => {
     console.log(data);
 
     // Map loading and creating of markers
-    MakeMap();
-    CreateAllMarkers();
-    loadData();
-    makeLabelList();
-    makeFilterCheckbox();
-    companyInfo();
-    SetupCheckboxes();
+    DataSetup();
+
+    // Setting up all DOM elements
+    PageSetup();
+
     //filterMarkers();
     //addMarkersWithFilter();
   });
-
-    // Setting up DOM elements
-    SetupSearchBox("searchBox");
 };
 
 
 // ---- Functions ----
+
+const DataSetup = () =>
+{
+  MakeMap();
+  CreateAllMarkers();
+  loadData();
+  makeLabelList();
+}
+
+const PageSetup = () =>
+{
+  makeFilterCheckbox();
+  companyInfo();
+  SetupCheckboxes();
+  SetupSearchBox("searchBox");
+  UpdateCompanyList("infoContainer");
+}
 
 /**
  * executes when api is loaded
@@ -155,12 +168,14 @@ const filterMarkers = (filters = []) =>
     })
 
     addMarkersWithFilter();
+    UpdateCompanyList("infoContainer");
   }
   else
   {
     console.log("There are no filters being applied");
     displayedCompanies = jsonData.companies;
     CreateAllMarkers();
+    UpdateCompanyList("infoContainer");
   }
 
 
@@ -286,4 +301,49 @@ const GetSearchResults = () =>
   // Display only the markers that match the search result
   displayedCompanies = searchResults;
   addMarkersWithFilter();
+  UpdateCompanyList("infoContainer");
+  // Update the list of companies
+  // UpdateCompanyList();
+}
+
+const setupCompanyList = (containerClass) =>
+{
+    let infoContainers = document.getElementsByClassName(containerClass);
+    infoContainers = Array.from(infoContainers)
+    let listToDisplay = [];
+    //console.log(`yeet`)
+    //console.log(displayedCompanies.length);
+    //console.log(displayedCompanies);
+
+    displayedCompanies.forEach((company) =>
+    {
+      infoContainers.forEach((container) => {
+        let nameToCheck = container.childNodes[0].innerHTML;
+        if(nameToCheck == company.name)
+        {
+          listToDisplay.push(container);
+        }
+      });
+    });
+
+    infoBoxes = listToDisplay;
+    console.log(infoBoxes);
+}
+
+const UpdateCompanyList = (containerClass) =>
+{
+  setupCompanyList("infoContainer");
+  let infoContainers = document.getElementsByClassName(containerClass);
+  infoContainers = Array.from(infoContainers);
+
+  infoContainers.forEach(container => {
+    if (infoBoxes.includes(container))
+    {
+      container.style.display = 'block';
+    }
+    else
+    {
+      container.style.display = "none";
+    }
+  });
 }
