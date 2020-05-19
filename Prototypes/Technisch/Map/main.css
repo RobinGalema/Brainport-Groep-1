@@ -50,7 +50,7 @@ body{
 #checkBoxLabel{
     margin: 2px;
     display: inline-block;
-    padding: 0px 5px 0px 5px;
+    padding: 5px;
     color: white;
     background-color: rgb(73, 73, 73);
     border-radius: 100px;
@@ -69,6 +69,11 @@ body{
     width: 90%;
     margin: 10px;
     background-color: rgb(193, 193, 193);
+    cursor: pointer;
+}
+
+.infoContainer:hover{
+    background-color: rgb(167, 167, 167);
 }
 
 .infoContainer p{
