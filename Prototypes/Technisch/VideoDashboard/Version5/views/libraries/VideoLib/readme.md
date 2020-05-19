@@ -51,9 +51,9 @@ So if the server gets newVideo through socket, it will insert it in the database
 <i>html form code</i><br>
 Make sure the form used is built up like this.<br>
 <i>id of this part has link+'the same number used in the dest of submitbutton'</i><br>
-```html <input id='link1' type='text' placeholder="youtube link"/> ```
+```HTML <input id='link1' type='text' placeholder="youtube link"/> ```
 <br>
-```html <input id='subm4' class="SubmitButton" type='submit'  dest='1'/> ```
+```HTML <input id='subm4' class="SubmitButton" type='submit'  dest='1'/> ```
 <br><br>
 <i>Server side code</i><br><br>
 
