@@ -68,7 +68,6 @@ let insertVideo = (data) => {<br>
             db.close();<br>
           });<br>
       });<br>
-
       io.emit('ReloadDash')<br>
 }<br><br>
 
