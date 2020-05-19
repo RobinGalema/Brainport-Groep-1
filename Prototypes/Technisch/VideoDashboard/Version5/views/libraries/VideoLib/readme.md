@@ -20,6 +20,7 @@ const url = "mongodb+srv://<username>:<password>@cluster0-ybw87.mongodb.net/test
 This functions only sends a message 'loadVideos' through socket, this means that the server side does the rest.<br><br>
 
 <i>This is the server side function</i><br>
+```
 //Getting all videos from database<br>
 let getVideos = () => {<br>
     //Connecting to database<br>
@@ -35,7 +36,7 @@ let getVideos = () => {<br>
             db.close();<br>
           });<br>
       });<br>
-}<br><br>
+}<br><br>```
 
 <b>You can reload the page with videoLoader().reloadPage()</b><br>
 the only thing this function does is clear the cache and reload the page, so when the user updated a video, you can use it to refresh.<br><br>
@@ -58,7 +59,7 @@ Make sure the form used is built up like this.<br>
 <i>Server side code</i><br><br>
 
 //Inserting filled in video in database<br>
-let insertVideo = (data) => {<br>
+```let insertVideo = (data) => {<br>
     MongoClient.connect(url, function(err, db) {<br>
         if (err) throw err;<br>
         var dbo = db.db(<Your database name>);<br>
@@ -71,7 +72,7 @@ let insertVideo = (data) => {<br>
             db.close();<br>
           });<br>
       });<br>
-      io.emit('ReloadDash')<br>
+      io.emit('ReloadDash')<br>```
 }<br><br>
 
 after putting a updated video in the database use videoLoader().reloadPage()
