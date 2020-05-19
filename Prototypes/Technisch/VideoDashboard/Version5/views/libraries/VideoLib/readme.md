@@ -21,7 +21,7 @@ This functions only sends a message 'loadVideos' through socket, this means that
 
 <i>This is the server side function</i><br>
 
-```//Getting all videos from database<br>
+```javascript //Getting all videos from database<br>
 let getVideos = () => {<br>
     //Connecting to database<br>
     MongoClient.connect(url, function(err, db) {<br>
@@ -59,7 +59,7 @@ Make sure the form used is built up like this.<br>
 <i>Server side code</i><br><br>
 
 //Inserting filled in video in database<br>
-```let insertVideo = (data) => {<br>
+```javascript let insertVideo = (data) => {<br>
     MongoClient.connect(url, function(err, db) {<br>
         if (err) throw err;<br>
         var dbo = db.db(<Your database name>);<br>
