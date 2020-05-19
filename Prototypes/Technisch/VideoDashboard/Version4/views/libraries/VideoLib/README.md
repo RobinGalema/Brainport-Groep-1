@@ -8,8 +8,8 @@ The mongoDB database setup for this library is fairly easy.<br>
 It just needs 3 fields, the id, iframeID and name.<br>
 id: the unique id mongoDB makes for a field.<br>
 iframeID: iframeID has multiple functions:<br>
-            1. it has the same id in it as te iframe you want the video in at the dashboard.<br>
-            2. the <title> of each seperate screen should be the same as the iframeID<br>
+           &emsp; 1. it has the same id in it as te iframe you want the video in at the dashboard.<br>
+            &emsp;2. the <title> of each seperate screen should be the same as the iframeID<br>
 link: This has the unique youtube video id in it, thats the part after v=<br><br>
 
 create a database first and link it in nodejs, get the cluster url and put in in the code<br>
