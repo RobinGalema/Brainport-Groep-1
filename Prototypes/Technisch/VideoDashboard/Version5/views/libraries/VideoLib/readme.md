@@ -13,15 +13,15 @@ iframeID: iframeID has multiple functions:<br>
 link: This has the unique youtube video id in it, thats the part after v=<br><br>
 
 create a database first and link it in nodejs, get the cluster url and put in in the code<br>
-const url = "mongodb+srv://<username>:<password>@cluster0-ybw87.mongodb.net/test?retryWrites=true&w=majority";<br><br>
+const url = "mongodb+srv://username:password@cluster0-ybw87.mongodb.net/test?retryWrites=true&w=majority";<br><br>
 
 
 <b>You can load the Page with videoLoader().loadPage()</b><br>
 This functions only sends a message 'loadVideos' through socket, this means that the server side does the rest.<br><br>
 
 <i>This is the server side function</i><br>
-
-```javascript //Getting all videos from database<br>
+```
+//Getting all videos from database<br>
 let getVideos = () => {<br>
     //Connecting to database<br>
     MongoClient.connect(url, function(err, db) {<br>
@@ -36,7 +36,8 @@ let getVideos = () => {<br>
             db.close();<br>
           });<br>
       });<br>
-}<br><br>```
+}<br><br>
+```
 
 <b>You can reload the page with videoLoader().reloadPage()</b><br>
 the only thing this function does is clear the cache and reload the page, so when the user updated a video, you can use it to refresh.<br><br>
@@ -52,14 +53,18 @@ So if the server gets newVideo through socket, it will insert it in the database
 <i>html form code</i><br>
 Make sure the form used is built up like this.<br>
 <i>id of this part has link+'the same number used in the dest of submitbutton'</i><br>
-```HTML <input id='link1' type='text' placeholder="youtube link"/> ```
+```
+<input id='link1' type='text' placeholder="youtube link"/>
+ ```
 <br>
-```HTML <input id='subm4' class="SubmitButton" type='submit'  dest='1'/> ```
+```HTML 
+<input id='subm4' class="SubmitButton" type='submit'  dest='1'/>
+ ```
 <br><br>
 <i>Server side code</i><br><br>
-
+```
 //Inserting filled in video in database<br>
-```javascript let insertVideo = (data) => {<br>
+ let insertVideo = (data) => {<br>
     MongoClient.connect(url, function(err, db) {<br>
         if (err) throw err;<br>
         var dbo = db.db(<Your database name>);<br>
@@ -73,6 +78,7 @@ Make sure the form used is built up like this.<br>
           });<br>
       });<br>
       io.emit('ReloadDash')<br>
-}<br><br>```
+}<br><br>
+```
 
 after putting a updated video in the database use videoLoader().reloadPage()
