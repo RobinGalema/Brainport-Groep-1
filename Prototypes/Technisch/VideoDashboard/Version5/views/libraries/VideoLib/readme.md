@@ -20,8 +20,8 @@ const url = "mongodb+srv://<username>:<password>@cluster0-ybw87.mongodb.net/test
 This functions only sends a message 'loadVideos' through socket, this means that the server side does the rest.<br><br>
 
 <i>This is the server side function</i><br>
-```
-//Getting all videos from database<br>
+
+```//Getting all videos from database<br>
 let getVideos = () => {<br>
     //Connecting to database<br>
     MongoClient.connect(url, function(err, db) {<br>
@@ -72,7 +72,7 @@ Make sure the form used is built up like this.<br>
             db.close();<br>
           });<br>
       });<br>
-      io.emit('ReloadDash')<br>```
-}<br><br>
+      io.emit('ReloadDash')<br>
+}<br><br>```
 
 after putting a updated video in the database use videoLoader().reloadPage()
