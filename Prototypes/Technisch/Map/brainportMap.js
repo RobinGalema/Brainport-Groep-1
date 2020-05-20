@@ -10,16 +10,18 @@ let checkboxes;
 let currentFilters = [];
 let searchBox;
 let infoBoxes = [];
+let jsonData
 
 /**
  * A function that creates and sets-up the map with markers, for this there should be a <div> element on the linked html page with "map" set as the div's id
- * @param {Object} jsonData An object containing data from a json file. This file should contain information about the companies and the markers for the map.
+ * @param {Object} data An object containing data from a json file. This file should contain information about the companies and the markers for the map.
  */
-const DataSetup = (jsonData) =>
+const DataSetup = (data) =>
 {
-    MakeMap(jsonData);
-    CreateAllMarkers(jsonData);
-    loadData(jsonData);
+    jsonData = data;
+    LoadData();
+    MakeMap();
+    CreateMarkers();
     makeLabelList();
 }
 
@@ -31,51 +33,53 @@ const DataSetup = (jsonData) =>
  * @param {String} ContainerClass The class name given to each of the containers for the company information in the menu, when left empty this will be set to: "infoContainer"
  * @example PageSetup("searchBox", "infoContainer");
  */
-const PageSetup = (jsonData ,searchBoxID = "searchBox", containerClass = "infoContainer") =>
+const PageSetup = (searchBoxID = "searchBox", containerClass = "infoContainer") =>
 {
     makeFilterCheckbox();
     companyInfo();
-    SetupCheckboxes(jsonData);
-    SetupSearchBox(searchBoxID, jsonData);
+    SetupCheckboxes();
+    SetupSearchBox(searchBoxID);
     SetupInfoContainers(containerClass);
-    setupCompanyList(containerClass);
+    SetupCompanyList(containerClass);
 }
 
 /**
  * executes when api is loaded
  */
-const initMap = () => {
+const InitMap = () => {
     console.log("maps API loaded.");
   };
   
   /**
    * creates map and marker
-   * @param {Object} jsonData Data from a json file, this is an object made from a json file
    */
-  const MakeMap = (jsonData) => {
-    var uluru = {
+  const MakeMap = () => {
+    const markerPos = {
       lat: jsonData.companies[0].marker.lat,
       lng: jsonData.companies[0].marker.long,
     };
     map = new google.maps.Map(document.getElementById("map"), {
-      center: uluru,
+      center: markerPos,
       zoom: 12,
     });
   };
   
   /**
    * creates makers and pushes them to markers array
-   * @param {Object} jsonData Data from a json file, this is an object made from a json file
    */
-  const CreateAllMarkers = (jsonData) => {
-    jsonData.companies.forEach((element) => {
-      var uluru = {
+  const CreateMarkers = () => {
+    
+    // Check if there are no markers on the map, if there are remove all current markers
+    markers.length == 0 ? true : RemoveMarkers();
+
+    displayedCompanies.forEach((element) => {
+      const markerPos = {
         lat: element.marker.lat,
         lng: element.marker.long,
       };
-      let marker = new google.maps.Marker({ position: uluru, map: map, name: element.name });
+      const marker = new google.maps.Marker({ position: markerPos, map: map, name: element.name });
       markers.push(marker);
-      var infoWindow = new google.maps.InfoWindow({
+      let infoWindow = new google.maps.InfoWindow({
         content: "Name: " + element.name,
       });
       marker.addListener("click", function () {
@@ -86,87 +90,54 @@ const initMap = () => {
   
   /**
    * Pushes all the companies from the JSON file into an array
-   * @param {Object} jsonData Data from a json file, this is an object made from a json file
    */
-  const loadData = (jsonData) => 
+  const LoadData = () => 
   {
-    jsonData.companies.forEach(element => {
-      let company = {};
-      company = element;
-      displayedCompanies.push(company);
-    });
-  
+    // Copy all companies from the json file
+    displayedCompanies = jsonData.companies.slice();
+
+    //Debug
+    console.log("Loaded companies from data file, containing the following companies:")
     console.log(displayedCompanies);
+    console.log("---------------------------------------------------------------------")
   }
   
   /**
-   * A function that filters all the companies in the dataset by labelnames
+   * A function that filters all the companies in the dataset by labelnames and then updates the markers on the map to match those
    * 
    * @param {[String]} filters An array of tags to filter the companies by, these tags should match the tags under the "labels" value in the data file
-   * @param {Object} jsonData Data from a json file, this is an object made from a json file
    * @returns {[Object]} An array with all the companies that match the input filters
    * 
-   * @example filterMarkers(["software","app-development"]);
+   * @example ApplyFilters(["software","app-development"]);
    */
-  const filterMarkers = (filters = [], jsonData) =>
+  const ApplyFilters = (filters = []) =>
   {
-    // Check if there is input for a filter
-    if (filters.length != 0)
-    {
-      // Clear the array of displayed companies to later fill it again with the new filters applied
-      displayedCompanies = [];
-  
-      jsonData.companies.forEach((company) => // Loop through all companies that are stored
+
+    let filteredData = jsonData.companies.filter(company => 
       {
-        let willBeDisplayed = true;
-  
-        filters.forEach(filter => // Loop through all given filters
-        {
-          // Check if one of the labels of the companies is the same as the given filter
-          if (company.labels.includes(filter))
-          {
-            console.log(`The company ${company.name} has the label ${filter}`);
-          }
-          else
-          {
-            console.log(`The company ${company.name} does not match all the filters`)
-            willBeDisplayed = false; // The filter is not in the company's tags so the company won't be displayed
-            return;
-          }
-        });
-  
-        console.log(`The company ${company.name} will be displayed? ===> ${willBeDisplayed}`)
-        console.log("-------------------------------------------");
-       
-        // Check if the company should be displayed on the map based on the filters
-        if (willBeDisplayed)
-        {
-          displayedCompanies.push(company); // Add the company to the list of displayed companies
-        }
-  
+        return company.labels.filter(x => filters.includes(x)).length>0  
       })
-  
-      addMarkersWithFilter();
-      UpdateCompanyList("infoContainer");
-    }
-    else
-    {
-      console.log("There are no filters being applied");
-      displayedCompanies = jsonData.companies;
-      CreateAllMarkers(jsonData);
-      UpdateCompanyList("infoContainer");
-    }
-  
-  
-    console.log(`The new company list:`);
-    console.log(displayedCompanies);
-    return displayedCompanies; // Return the list the new list of companies to display
+    console.log(filteredData);
+
+      if (filteredData.length != 0)
+      {
+        displayedCompanies = filteredData;
+        CreateMarkers();
+        UpdateCompanyList("infoContainer");
+      }
+      else
+      {
+        console.log("There are no filters being applied");
+        displayedCompanies = jsonData.companies;
+        CreateMarkers();
+        UpdateCompanyList("infoContainer");
+      }
   }
   
   /**
    * Removes all current markers on the map and clears the array storing the markers
    */
-  const removeMarkers = () =>
+  const RemoveMarkers = () =>
   {
     markers.forEach(marker => {
       marker.setMap(null);
@@ -175,37 +146,11 @@ const initMap = () => {
     markers = [];
   }
   
-  /**
-   * Uses a list of companies to display each company's location on the map
-   */
-  const addMarkersWithFilter = () =>
-  {
-    removeMarkers();
-  
-    displayedCompanies.forEach((element) => {
-      var uluru = {
-        lat: element.marker.lat,
-        lng: element.marker.long,
-      };
-      let marker = new google.maps.Marker({ position: uluru, map: map, name: element.name });
-      markers.push(marker);
-      var infoWindow = new google.maps.InfoWindow({
-        content:`Company: ${element.name}`
-      });
-      marker.addListener("click", function () {
-        infoWindow.open(map, marker);
-      });
-    });
-  }
-  
-  // -----------
-  // !! WIP !!
-  // -----------
-  
    /**
     * A function that adds eventlisteners to all checkboxes to make them update the markers on the map based on the tag of the checkbox
+    * 
     */
-  const SetupCheckboxes = (jsonData) =>
+  const SetupCheckboxes = () =>
    {
      checkboxes = document.getElementsByClassName("labelCheckBox")
      console.log(checkboxes);
@@ -230,7 +175,7 @@ const initMap = () => {
           }
         }
   
-        filterMarkers(currentFilters, jsonData);
+        ApplyFilters(currentFilters);
         console.log(currentFilters);
       })
      });
@@ -239,39 +184,46 @@ const initMap = () => {
   /**
    * A function that adds an eventlistener to the searchbox, place this in window.onload
    * @param {String} idName The name of the id given to the input DOM element
-   * @param {object} jsonData
    * 
    * @example SetupSearchBox("searchBox");
    */
-  const SetupSearchBox = (idName, jsonData) =>
+  const SetupSearchBox = (idName) =>
   {
     searchBox = document.getElementById(idName);
   
     // Add an eventlistener that runs a function every time the value of the inputbox changes
     searchBox.addEventListener('input', function()
     {
-      GetSearchResults(jsonData);
+      let result = GetSearchResults(searchBox.value);
+      displayedCompanies = result;
+      CreateMarkers();
+      UpdateCompanyList("infoContainer");
     })
   }
   
   /**
-   * A function that uses the inputfield of the button to filters the list of companies by comparing the name of the company to the input value
+   * A function that uses the inputfield of the button to filter the list of companies by comparing the name of the company to the input value
    * 
-   * @param {Object} jsonData
+   * @param {String} inputValue The value that will be used to search through the list of company names
+   * @returns {[Object]} An array containing all the companies matching the name of the input value
+   * 
+   * @example GetSearchResultss("BitSensor");
    */
-  const GetSearchResults = (jsonData) =>
+  const GetSearchResults = (inputValue) =>
   {
     // Reset all markers based on the current applied filters
-    filterMarkers(currentFilters, jsonData);
-    addMarkersWithFilter();
+    ApplyFilters(currentFilters);
+    CreateMarkers();
   
     // Creating search input variable to search witouth being case sensitive
-    let input = new RegExp(searchBox.value, `i`);
+    let input = new RegExp(inputValue, `i`);
     let searchResults = [];
     
     // debug
     console.log(displayedCompanies);
   
+    // !!!!!
+    // TODO: gebruik hier ook de 'filter' methode om het in 1 keer te filteren: https://www.geeksforgeeks.org/es6-array-filter-method/
     displayedCompanies.forEach((company) =>
     {
       if (company.name.match(input)) // Check if there is a company that has the search input in their name
@@ -281,11 +233,7 @@ const initMap = () => {
     });
   
     // Display only the markers that match the search result
-    displayedCompanies = searchResults;
-    addMarkersWithFilter();
-    UpdateCompanyList("infoContainer");
-    // Update the list of companies
-    // UpdateCompanyList();
+    return searchResults;
   }
   
   /**
@@ -299,6 +247,8 @@ const initMap = () => {
   
     infoContainers.forEach((container) => {
       container.addEventListener('click', function() {
+        // !!!!
+        // TODO: Gebruikt maken van array.find methode https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
         markers.forEach((marker) => {
           console.log("searching");
           if (container.childNodes[0].innerHTML == marker.name)
@@ -316,14 +266,11 @@ const initMap = () => {
    * Sets up a list of information divs of companies based on the currently displayed markers
    * @param {String} containerClass The class name given to the div containing the information of the company
    */
-  const setupCompanyList = (containerClass) =>
+  const SetupCompanyList = (containerClass) =>
   {
       let infoContainers = document.getElementsByClassName(containerClass);
       infoContainers = Array.from(infoContainers)
       let listToDisplay = [];
-      //console.log(`yeet`)
-      //console.log(displayedCompanies.length);
-      //console.log(displayedCompanies);
   
       displayedCompanies.forEach((company) =>
       {
@@ -346,36 +293,21 @@ const initMap = () => {
    */
   const UpdateCompanyList = (containerClass) =>
   {
-    setupCompanyList("infoContainer");
+    SetupCompanyList("infoContainer");
     let infoContainers = document.getElementsByClassName(containerClass);
     infoContainers = Array.from(infoContainers);
   
     infoContainers.forEach(container => {
-      if (infoBoxes.includes(container))
-      {
-        container.style.display = 'block';
-      }
-      else
-      {
-        container.style.display = "none";
-      }
+      // Check if the container should be displayed or not and update the style setting accordingly
+      container.style.display = infoBoxes.includes(container) ? 'block' : 'none';
     });
   }
 
   return {
-    initMap: initMap,
-    filterMarkers: filterMarkers,
-    removeMarkers: removeMarkers,
-    addMarkersWithFilter: addMarkersWithFilter,
-    SetupCheckboxes: SetupCheckboxes,
-    SetupSearchBox: SetupSearchBox,
-    SetupInfoContainers: SetupInfoContainers,
-    GetSearchResults: GetSearchResults,
-    SetupInfoContainers: SetupInfoContainers,
-    setupCompanyList: setupCompanyList,
-    UpdateCompanyList: UpdateCompanyList,
     DataSetup:DataSetup,
-    PageSetup:PageSetup
+    PageSetup:PageSetup,
+    GetSearchResults: GetSearchResults,
+    markers,
   };
 
 })();

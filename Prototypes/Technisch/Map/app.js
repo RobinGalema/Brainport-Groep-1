@@ -20,18 +20,15 @@ const fetchJSONFile = (path, callback) => {
   httpRequest.send();
 };
 
-// W.I.P => window.onload needs some changes when all functions are done
 window.onload = () => {
   fetchJSONFile("data.json", function (data) {
     jsonData = data;
 
     // Map loading and creating of markers
-    BrainportMap.DataSetup(jsonData);
+    BrainportMap.DataSetup(data);
 
     // Setting up all DOM elements
-    BrainportMap.PageSetup(jsonData, "searchBox", "infoContainer");
+    BrainportMap.PageSetup("searchBox", "infoContainer");
 
   });
-
-  BrainportMap
 };
