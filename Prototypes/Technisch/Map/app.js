@@ -21,6 +21,7 @@ const fetchJSONFile = (path, callback) => {
 
 window.onload = () => {
   fetchJSONFile("data.json", function (data) {
+    Menu.setupMenu(data);
 
     // Map loading and creating of markers
     BrainportMap.DataSetup(data);
@@ -28,7 +29,6 @@ window.onload = () => {
     // Setting up all DOM elements
     BrainportMap.PageSetup("searchBox", "infoContainer");
 
-    Menu.setupMenu(data);
 
   });
 };
