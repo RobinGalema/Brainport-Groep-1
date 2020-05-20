@@ -65,7 +65,7 @@
       "adress": "De Lismortel 31",
       "zip": "5612AR",
       "city": "Eindhoven",
-      "labels": ["healthcare", "technology"],
+      "labels": ["startup", "healthcare", "technology"],
       "website": "http://xeltis.com/",
       "marker": {
         "lat": 51.448429,
@@ -154,6 +154,210 @@
       "marker": {
         "lat": 51.446019,
         "long": 5.487341
+      }
+    },
+    {
+      "name": "LABELEDBY",
+      "adress": "Zeelsterstraat 80",
+      "zip": "5652 EL",
+      "city": "Eindhoven",
+      "labels": ["startup", "technology", "design"],
+      "website": "https://www.labeledby.com/",
+      "marker": {
+        "lat": 51.438304,
+        "long": 5.443766
+      }
+    },
+    {
+      "name": "Nupky",
+      "adress": "Ambachtslaan 126",
+      "zip": "5506 AK",
+      "city": "Eindhoven",
+      "labels": ["startup", "industrial", "UX", "branding"],
+      "website": "https://www.nupky.com/",
+      "marker": {
+        "lat": 51.419107,
+        "long": 5.392102
+      }
+    },
+    {
+      "name": "qoowl",
+      "adress": "Torenallee 86-02",
+      "zip": "5617 BD",
+      "city": "Eindhoven",
+      "labels": ["startup", "design", "interior", "fashion"],
+      "website": "https://www.qoowl.nl/",
+      "marker": {
+        "lat": 51.44811,
+        "long": 5.453381
+      }
+    },
+    {
+      "name": "Studio Lucifer",
+      "adress": "Schootsestraat 57F",
+      "zip": "5616 RB",
+      "city": "Eindhoven",
+      "labels": ["startup", "light", "design"],
+      "website": "https://studiolucifer.com/",
+      "marker": {
+        "lat": 51.443715,
+        "long": 5.455206
+      }
+    },
+    {
+      "name": "MedApp",
+      "adress": "Horsten 1",
+      "zip": "5612 AX",
+      "city": "Eindhoven",
+      "labels": ["startup", "healthcare", "app-development", "mobile"],
+      "website": "https://medapp.nu/",
+      "marker": {
+        "lat": 51.449709,
+        "long": 5.495117
+      }
+    },
+    {
+      "name": "Usono",
+      "adress": "High Tech Campus 12",
+      "zip": "5656 AE",
+      "city": "Eindhoven",
+      "labels": ["startup", "healthcare", "innovation"],
+      "website": "https://www.usono.com/",
+      "marker": {
+        "lat": 51.411806,
+        "long": 5.453309
+      }
+    },
+    {
+      "name": "Avular",
+      "adress": "Achtseweg Zuid 153G",
+      "zip": "5651 GW",
+      "city": "Eindhoven",
+      "labels": ["startup", "technology"],
+      "website": "https://www.avular.com/",
+      "marker": {
+        "lat": 51.450134,
+        "long": 5.453452
+      }
+    },
+    {
+      "name": "EPHI",
+      "adress": "Ondernemingenweg 26",
+      "zip": "5627 BV",
+      "city": "Eindhoven",
+      "labels": ["startup", "technology", "transport"],
+      "website": "https://ephi-design.com/",
+      "marker": {
+        "lat": 51.478861,
+        "long": 5.440249
+      }
+    },
+    {
+      "name": "RUVU",
+      "adress": "De Maas 8",
+      "zip": "5684 PL",
+      "city": "Best",
+      "labels": ["startup", "software"],
+      "website": "http://ruvu.nl/",
+      "marker": {
+        "lat": 51.488833,
+        "long": 5.394127
+      }
+    },
+    {
+      "name": "Upprinting Food",
+      "adress": "Sumatralaan 3",
+      "zip": "5631 AA",
+      "city": "Eindhoven",
+      "labels": ["startup", "food", "technology"],
+      "website": "https://www.upprintingfood.com/",
+      "marker": {
+        "lat": 51.453609,
+        "long": 5.49767
+      }
+    },
+    {
+      "name": "Vention",
+      "adress": "High Tech Campus 12",
+      "zip": "5656 AE",
+      "city": "Eindhoven",
+      "labels": ["startup", "software", "technology"],
+      "website": "https://www.vention.nl/",
+      "marker": {
+        "lat": 51.411732,
+        "long": 5.452643
+      }
+    },
+    {
+      "name": "Het Solly Systeem",
+      "adress": "Ondernemingenweg 26",
+      "zip": "5627 BV",
+      "city": "Eindhoven",
+      "labels": ["startup", "education", "technology"],
+      "website": "http://www.hetsollysysteem.nl/",
+      "marker": {
+        "lat": 51.479047,
+        "long": 5.440776
+      }
+    },
+    {
+      "name": "Lockpouch",
+      "adress": "unknown",
+      "zip": "unknown",
+      "city": "Eindhoven",
+      "labels": ["startup", "innovation"],
+      "website": "https://lockpouch.com/",
+      "marker": {
+        "lat": 51.441674,
+        "long": 5.46976
+      }
+    },
+    {
+      "name": "Lunch Learners",
+      "adress": "Horsten 1",
+      "zip": "5612 AX",
+      "city": "Eindhoven",
+      "labels": ["startup", "education"],
+      "website": "https://lunchlearners.nl",
+      "marker": {
+        "lat": 51.449693,
+        "long": 5.495125
+      }
+    },
+    {
+      "name": "Promotiebrillen",
+      "adress": "Krabbedampad 16",
+      "zip": "5611GW",
+      "city": "Eindhoven",
+      "labels": ["startup", "industrial"],
+      "website": "https://promotiebrillen.nl/",
+      "marker": {
+        "lat": 51.438246,
+        "long": 5.477936
+      }
+    },
+    {
+      "name": "Sonco",
+      "adress": "Unknown",
+      "zip": "Unknown",
+      "city": "Eindhoven",
+      "labels": ["startup", "strategy"],
+      "website": "https://sonco.nl/",
+      "marker": {
+        "lat": 51.441622,
+        "long": 5.469905
+      }
+    },
+    {
+      "name": "wedowe",
+      "adress": "Kastanjelaan 400",
+      "zip": "5616 LZ",
+      "city": "Eindhoven",
+      "labels": ["startup", "education"],
+      "website": "https://www.wedowe.org/",
+      "marker": {
+        "lat": 51.444778,
+        "long": 5.459964
       }
     }
   ]
