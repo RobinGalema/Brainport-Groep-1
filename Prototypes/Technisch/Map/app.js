@@ -1,4 +1,3 @@
-let jsonData;
 // ---- File and window loading ----
 
 /**
@@ -22,13 +21,14 @@ const fetchJSONFile = (path, callback) => {
 
 window.onload = () => {
   fetchJSONFile("data.json", function (data) {
-    jsonData = data;
 
     // Map loading and creating of markers
     BrainportMap.DataSetup(data);
 
     // Setting up all DOM elements
     BrainportMap.PageSetup("searchBox", "infoContainer");
+
+    Menu.setupMenu(data);
 
   });
 };

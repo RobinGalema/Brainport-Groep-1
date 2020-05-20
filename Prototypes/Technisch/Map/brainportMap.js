@@ -22,7 +22,6 @@ const DataSetup = (data) =>
     LoadData();
     MakeMap();
     CreateMarkers();
-    makeLabelList();
 }
 
 /**
@@ -35,8 +34,6 @@ const DataSetup = (data) =>
  */
 const PageSetup = (searchBoxID = "searchBox", containerClass = "infoContainer") =>
 {
-    makeFilterCheckbox();
-    companyInfo();
     SetupCheckboxes();
     SetupSearchBox(searchBoxID);
     SetupInfoContainers(containerClass);

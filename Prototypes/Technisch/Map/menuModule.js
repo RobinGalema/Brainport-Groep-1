@@ -1,4 +1,15 @@
 const Menu = (function () {
+
+  let jsonData;
+
+  const setupMenu = (data) =>
+  {
+    jsonData = data;
+    MakeLabelList();
+    MakeFilterCheckbox();
+    CompanyInfo();
+  }
+
   /**
    * this closes the menu
    */
@@ -20,7 +31,7 @@ const Menu = (function () {
    * this puts all labels in an array
    * @param {string} jsonData path to json file
    */
-  const makeLabelList = (jsonData) => {
+  const MakeLabelList = () => {
     jsonData.companies.forEach((element) => {
       element.labels.forEach((label) => {
         if (!labelList.includes(label)) {
@@ -35,7 +46,7 @@ const Menu = (function () {
   /**
    * this puts all items from an array into labels and appends them to checkboxcontainer
    */
-  const makeFilterCheckbox = () => {
+  const MakeFilterCheckbox = () => {
     labelList.forEach((element) => {
       // creates checkbox
       var checkBox = document.createElement("input");
@@ -58,16 +69,16 @@ const Menu = (function () {
    * makes textboxes for each company
    * @param {string} jsonData path to json file
    */
-  const companyInfo = (jsonData) => {
+  const CompanyInfo = () => {
     jsonData.companies.forEach((element) => {
       let infoContainer = document.createElement("div");
       infoContainer.className = "infoContainer";
       menuContent.appendChild(infoContainer);
 
-      let companyNameText = createPElement("h3", "infoText", element.name);
-      let companyAdress = createPElement("p", "infoText", element.adress);
-      let companyCity = createPElement("p", "infoText", element.city);
-      let companyWebsite = createPElement("p", "infoText", element.website);
+      let companyNameText = CreatePElement("h3", "infoText", element.name);
+      let companyAdress = CreatePElement("p", "infoText", element.adress);
+      let companyCity = CreatePElement("p", "infoText", element.city);
+      let companyWebsite = CreatePElement("p", "infoText", element.website);
 
       infoContainer.appendChild(companyNameText);
       infoContainer.appendChild(companyAdress);
@@ -82,7 +93,7 @@ const Menu = (function () {
    * @param {string} id element id
    * @param {string} input text
    */
-  const createPElement = (element, id, input) => {
+  const CreatePElement = (element, id, input) => {
     let infoText = document.createElement(element);
     infoText.id = id;
 
@@ -93,8 +104,6 @@ const Menu = (function () {
   return {
     CloseMenu: CloseMenu,
     OpenMenu: OpenMenu,
-    makeLabelList: makeLabelList,
-    makeFilterCheckbox: makeFilterCheckbox,
-    companyInfo: companyInfo,
+    setupMenu: setupMenu
   };
 })();
