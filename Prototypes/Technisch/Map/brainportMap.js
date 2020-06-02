@@ -70,6 +70,9 @@ const BrainportMap = (function () {
     markers.length == 0 ? true : RemoveMarkers();
 
     displayedCompanies.forEach((element) => {
+      let info = document.createElement("p")
+      info.innerHTML = `<b>${element.name}</b> <br> Adress: ${element.adress} <br> Website: <a href="${element.website}" target="blank">${element.website}</a>`;
+
       const markerPos = {
         lat: element.marker.lat,
         lng: element.marker.long,
@@ -81,7 +84,7 @@ const BrainportMap = (function () {
       });
       markers.push(marker);
       let infoWindow = new google.maps.InfoWindow({
-        content: "Name: " + element.name,
+        content: info
       });
       marker.addListener("click", function () {
         infoWindow.open(map, marker);
