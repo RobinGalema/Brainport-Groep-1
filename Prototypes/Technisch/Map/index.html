@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Brainport Map</title>
+
+    <!-- Hotjar Tracking Code for http://i416153.hera.fhict.nl/index.html -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1828069,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+</head>
+
+<body>
+    <button class="openbutton" id="menuOpenButton" onclick="Menu.OpenMenu()"><img src="/Photos/filter.png" alt="filter"></button>
+    <div id="menu">
+        <button id="menuCloseButton" onclick="Menu.CloseMenu()">X</button>
+        <div id="menuContent">
+
+            <h2>FILTER MAP:</h2>
+
+            <div id="checkBoxContainer">
+            </div>
+            <h2>SEARCH:</h2>
+            <input type="text" id="searchBox">
+        </div>
+    </div>
+    <div id="map"></div>
+    <script src="app.js"></script>
+    <script src="menuModule.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjzV8Ews5b4xZ93n9eeQMSafloEzuGlYQ&callback=initMap"></script>
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js">
+    </script>
+    <script src="brainportMap.js"></script>
+
+
+</body>
+
+</html>
