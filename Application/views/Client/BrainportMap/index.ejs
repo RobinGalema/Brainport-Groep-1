@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Client/BrainportMap/main.css">
+    <link rel="stylesheet" href="Client/blackScreen.css">
+    <title>Brainport Map</title>
+</head>
+
+<body>
+    <div id="BlackScreen"></div>
+    <button class="openbutton" id="menuOpenButton" onclick="Menu.OpenMenu()"><img src="/Client/BrainportMap/Photos/filter.png" alt="filter"></button>
+    <div id="menu">
+        <button id="menuCloseButton" onclick="Menu.CloseMenu()">X</button>
+        <div id="menuContent">
+
+            <h2>FILTER MAP:</h2>
+
+            <div id="checkBoxContainer">
+            </div>
+            <h2>SEARCH:</h2>
+            <input type="text" id="searchBox">
+        </div>
+    </div>
+    <div id="map"></div>
+   
+    
+
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="Client/BrainportMap/app.js"></script>
+<script src="Client/BrainportMap/menuModule.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjzV8Ews5b4xZ93n9eeQMSafloEzuGlYQ&callback=initMap"></script>
+<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js">
+</script>
+<script src="/Client/BrainportMap/brainportMap.js"></script>
+<script src="/Client/screenControl.js"></script>
+</html>
