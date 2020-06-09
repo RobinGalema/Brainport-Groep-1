@@ -30,6 +30,13 @@
         "zip": "5656 AE",
         "city": "Eindhoven",
         "labels": ["startup", "healthcare"],
+        "joboffer": [
+          {
+          "title": "UX Designer",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "salary": "€2100"
+        }
+      ],
         "website": "https://www.bambi-medical.com/",
         "marker": {
           "lat": 51.411551,
@@ -42,6 +49,13 @@
         "zip": "5612AX",
         "city": "Eindhoven",
         "labels": ["startup", "technology", "security"],
+        "joboffer": [
+          {
+          "title": "Software Engineer",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "salary": "€2800"
+        }
+      ],
         "website": "https://bitsensor.io/",
         "marker": {
           "lat": 51.449708,
@@ -54,6 +68,18 @@
         "zip": "5708JZ",
         "city": "Helmond",
         "labels": ["startup", "innovation", "mobility", "cars", "eco-friendly"],
+        "joboffer": [
+          {
+          "title": "IT Analyst",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "salary": "€2400"
+        },
+        {
+          "title": "Network Archtitect",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "salary": "€2600"
+        }
+      ],
         "website": "https://lightyear.one/",
         "marker": {
           "lat": 51.474223,
