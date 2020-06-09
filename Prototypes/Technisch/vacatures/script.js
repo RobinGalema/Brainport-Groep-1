@@ -11,7 +11,7 @@ function searchJobOffer() {
     if (element.city == userInput) {
       element.joboffer.forEach(element => {
         console.log(element);
-        htmlString += "<div class='vacature'><div class='info'><h2>" + element.title +  "</h2><p>" + element.description + "</p> <p>Salary: " + element.salary + "</p></div></div>";
+        htmlString += `<div class='vacature'><div class='info'><h2>${element.title}</h2><p>${element.description}</p> <p>Salary: ${element.salary}</p></div></div>`;
         $('#output').html(htmlString);
       });
   }}))
