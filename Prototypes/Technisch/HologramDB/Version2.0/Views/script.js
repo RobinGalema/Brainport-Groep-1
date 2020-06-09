@@ -1,9 +1,11 @@
 
 
 let init = () => {
+    if(document.title == 'Holograms'){
     let width = window.innerHeight + 'px'
     $('#HologramWrap').css('width', width )
     makeScreens(window.innerHeight)
+    }
 }
 
 function readTextFile(file, callback) {
