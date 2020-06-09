@@ -1,0 +1,46 @@
+@font-face {
+    font-family: NittiEindhovenBlack;
+    src: url(font/NittiEindhoven-Black-v20.otf);
+  }
+
+  @font-face {
+    font-family: NittiEindhovenLight;
+    src: url(font/NittiEindhoven-Light-v20.otf);
+  }
+
+  body {font-family: NittiEindhovenLight;}
+  h1, h2, h3 {font-family: NittiEindhovenBlack;}
+
+  .vacature {
+    border: 1px solid black;
+    margin: 0 10px 10px 0;
+    width: 47.5%;
+    float: left;
+    padding: 5px;
+}
+
+  input#inputSearch {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline;
+    width: 95%;
+    padding: 7px 16px;
+    outline: none;
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 4px;
+    border-radius: 0;
+    border: 1px solid #d0d0d0;
+    background-color: #f7f7f7;
+}
+
+button {
+    border: none;
+    background-color: #eb0000;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    padding: 17px;
+}
