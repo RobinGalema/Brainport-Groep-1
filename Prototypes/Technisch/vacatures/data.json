@@ -9,13 +9,15 @@
         "joboffer": [
           {
           "title": "Front-end Developer",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "salary": "€2300"
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€2300",
+          "time": "Fulltime"
         },
         {
           "title": "Back-end Developer",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "salary": "€2600"
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€2600",
+          "time": "Fulltime"
         }
       ],
         "website": "https://driveamber.com/",
@@ -33,8 +35,9 @@
         "joboffer": [
           {
           "title": "UX Designer",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "salary": "€2100"
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€2100",
+          "time": "Fulltime"
         }
       ],
         "website": "https://www.bambi-medical.com/",
@@ -52,8 +55,9 @@
         "joboffer": [
           {
           "title": "Software Engineer",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "salary": "€2800"
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€2800",
+          "time": "Fulltime"
         }
       ],
         "website": "https://bitsensor.io/",
@@ -71,13 +75,15 @@
         "joboffer": [
           {
           "title": "IT Analyst",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "salary": "€2400"
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€2400",
+          "time": "Fulltime"
         },
         {
           "title": "Network Archtitect",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "salary": "€2600"
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€2600",
+          "time": "Fulltime"
         }
       ],
         "website": "https://lightyear.one/",
@@ -92,6 +98,20 @@
         "zip": "5656AE",
         "city": "Eindhoven",
         "labels": ["startup", "healthcare", "innovation"],
+        "joboffer": [
+          {
+          "title": "Help Desk Specialist",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€1000",
+          "time": "Partime"
+        },
+        {
+          "title": "IT Support Manager",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€2200",
+          "time": "Fulltime"
+        }
+      ],
         "website": "https://www.plasmacure.nl/en/",
         "marker": {
           "lat": 51.411781,
@@ -105,6 +125,20 @@
         "city": "Eindhoven",
         "labels": ["startup", "healthcare", "technology"],
         "website": "http://xeltis.com/",
+        "joboffer": [
+          {
+          "title": "IT Coordinator",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€22000",
+          "time": "Fulltime"
+        },
+        {
+          "title": "Network Engineer",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+          "salary": "€2800",
+          "time": "Fulltime"
+        }
+      ],
         "marker": {
           "lat": 51.448429,
           "long": 5.48538
