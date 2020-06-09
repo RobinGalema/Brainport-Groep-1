@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</head>
+<body">
+    <div id="img"></div>
+
+    <script>
+        let hologrammen = ["url('img/leeuw.jpg')", "url('img/olifant.jpg')", "url('img/giraffe.jpg')",
+            "url('img/aap.jpg')"
+        ]
+        const socket = io();
+
+        socket.on('commando', function (data) {
+            console.log(`Er komt ${data} binnen`);
+
+            switch (data) {
+                case 1: {
+                    $("#img").css("background-image", hologrammen[0]);
+                    
+                    break;
+                }
+                case 2: {
+                    $("#img").css("background-image", hologrammen[1]);
+                    
+                    break;
+                }
+                case 3: {
+                    $("#img").css("background-image", hologrammen[2]);
+                    break;
+                }
+                case 4: {
+                    $("#img").css("background-image", hologrammen[3]);
+                    break;
+                }
+                default: {
+                    $("#img").css("background-image", hologrammen[0]);
+                    break;
+                }
+            }
+        })
+    </script>
+    </body>
+
+</html>
