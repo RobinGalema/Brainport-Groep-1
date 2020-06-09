@@ -13,12 +13,15 @@
 
 <body>
   <div id="search">
-    <form class="example" onsubmit="return false;">
+    <form class="form" onsubmit="return false;">
       <input type="text" id="inputSearch" placeholder="Search.." name="search">
       <button type="submit" id="submitSearch"><i class="fa fa-search"></i></button>
     </form>
 
-    <article class='gallery'></article>
+    <div id="containerOutput">
+      <h1 id="outputTitle">Vacatures</h1>
+      <div id="output"></div>
+    </div>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
