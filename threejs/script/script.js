@@ -13,11 +13,14 @@ let Init = () => {
     (40, window.innerWidth * window.innerHeight, 0.01, 500000)
   );
   camera.position.set(10, 100, -200);
-
+  camera.fov = window.innerHeight / window.screen.height;
+  camera.aspect = window.innerWidth / window.innerHeight;
+  
   //controls
   let controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.addEventListener("change", renderer);
 
+  
   // // camera guidelines
   // var helper = new THREE.CameraHelper( camera );
   // scene.add( helper );
@@ -45,10 +48,10 @@ let Init = () => {
 
   // loader
   let loader = new THREE.GLTFLoader();
-  loader.load("minimuseum20.gltf", function (gltf) {
+  loader.load("minimuseum21.gltf", function (gltf) {
     let museum = gltf.scene;
     museum.scale.set(-1, -2, 1);
-    museum.position.y = 40;
+    museum.position.y = 45;
     scene.add(gltf.scene);
     animate();
   });
