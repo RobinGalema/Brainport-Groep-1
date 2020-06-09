@@ -1,0 +1,40 @@
+body{
+    display:flex;
+    height:100vh;
+    justify-content: center;
+    align-content: center;
+}
+
+#BPAdminBlock{
+    width:200px;
+    height:150px;
+    background-color:lightgray;
+    border:0.3px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius:5px;
+}
+
+#bpLogo{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background-color: black;
+}
+
+#buttonLogIn{
+    width:150px;
+    background-color:lime;
+    height:60px;
+    border-radius:5px;
+}
+
+#buttonLogIn:hover{
+    cursor:pointer;
+}
+
+#hologramBTN:hover{
+    cursor:pointer;
+}
