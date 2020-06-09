@@ -13,11 +13,17 @@
 
   .vacature {
     border: 1px solid black;
-    margin: 0 10px 10px 0;
-    width: 47.5%;
+    margin: 0 2% 20px 0;
+    width: 20%;
     float: left;
     padding: 5px;
 }
+
+.vacature:nth-of-type(4n+4){
+    margin: 0 0 20px 0;
+}
+
+#containerOutput{ max-width: 1500px; margin: 0 auto;}
 
   input#inputSearch {
     -webkit-appearance: none;
