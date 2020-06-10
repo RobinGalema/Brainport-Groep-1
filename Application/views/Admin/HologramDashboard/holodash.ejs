@@ -47,13 +47,29 @@
     </div>
 
     <div id='uploadHologram-Wrap'>
+        
         <form id='myForm' name='Form' action="fileupload" method="post" enctype="multipart/form-data">
+            <h3>Upload hologram video</h3>
             <input type='text' placeholder="Naam" name='name'>
             <input type="file" name="filetoupload" accept="video/*"><br>
-            <input id="button" value='upload' type="submit">
+            <input id="button" value='Upload' type="submit">
         </form>
+
+        <div style='width:100%;'>
+            <h3>Delete hologram video</h3>
+        <select id='deleteSelection'>
+
+        </select>
+        <div id='btnDelete'>
+            Verwijder
+        </div>
+        </div>
+        
     </div>
+
+
 </body>
+<script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src='script.js'></script>
+<script src='HologramDashboard/script.js'></script>
 </html>

@@ -86,7 +86,7 @@ let createJSON = () => {
     obj.push({name: btnname , file: btnvideoname}); 
     json = JSON.stringify(obj);
     //rewrite file
-    fs.writeFile(__dirname+'/views/Client/Hologram/Holograms/holograms.json', json,function (err) {
+    fs.writeFile(__dirname+'/views/Client/Hologram/Holograms/holograms.json', json, function (err) {
       if (err) throw err;
       console.log('Saved!');
     }); 
@@ -102,5 +102,23 @@ io.sockets.on('connection', (socket) => {
 
     socket.on('screenSwitch', (data) => {
        io.emit('toggleBox');
+    })
+
+    socket.on("deleteEntry", (data) =>{
+      fs.writeFile(__dirname+'/views/Client/Hologram/Holograms/holograms.json', data, function(err)
+      {
+        if (err) throw err;
+      })
+    })
+
+    socket.on("deleteVideo", (fileName) => {
+      fs.unlink(__dirname+`/views/Client/Hologram/Holograms/${fileName}`, function(err)
+      {
+        if (err) throw err;
+        else
+        {
+          console.log('file deleted');
+        }
+      })
     })
 });
