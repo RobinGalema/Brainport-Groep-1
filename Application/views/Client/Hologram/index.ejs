@@ -3,15 +3,43 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>HoloDash</title>
+    <title>Holograms</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='Client/Hologram/main.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='Client/blackScreen.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='/Client/Hologram/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../Client/blackScreen.css'>
+    
 </head>
 <body>
     <div id="BlackScreen"></div>
+    <div id='btnHoloWrap'>
+    </div>
+    <div id='HologramWrap'>
+        <div class='holoScreen'>
+            <video class='holoVideo' id='videoTop' loop muted>
+                <source  class='defHolo' src="" type="video/mp4" />
+            </video> 
+        </div>
+        <div id='centerscreens'>
+            <div class='holoScreen'>
+                <video class='holoVideo' id='videoLeft' loop muted>
+                    <source  class='defHolo' src="" type="video/mp4" />
+                </video> 
+            </div>
+            <div class='holoScreen'>
+                <video class='holoVideo' id='videoRight' loop muted>
+                    <source  class='defHolo' src="" type="video/mp4" />
+                </video> 
+            </div>
+        </div>
+        <div class='holoScreen'>
+            <video class='holoVideo' id='videoBottom' loop muted>
+                <source class='defHolo' src="" type="video/mp4" />
+            </video> 
+        </div>
+    </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src='../Client/Hologram/script.js'></script>
 <script src="/socket.io/socket.io.js"></script>
-<script src='Client/screenControl.js'></script>
+<script src='../Client/screenControl.js'></script>
 </html>
