@@ -8,6 +8,11 @@ server.listen(8000);
 app.use(express.static('views'))
 const io = require('socket.io').listen(server);
 
+
+app.get('/', (req,res) =>{
+    res.render('index.ejs')
+})
+
 app.get('/Maps', (req,res) => {
     res.render('Client/BrainportMap/index.ejs')
 })
@@ -32,7 +37,7 @@ app.get('/Admin/holodash', (req,res) =>{
     res.render('Admin/HologramDashboard/holodash.ejs')
 })
 
-app.get('/Client/Vacatures', (req,res) => {
+app.get('/Vacatures', (req,res) => {
   res.render('Client/Vacatures/index.ejs')
 })
 

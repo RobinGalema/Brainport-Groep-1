@@ -22,7 +22,7 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
-readTextFile("Holograms/holograms.json", function(text){
+readTextFile("/Client/Hologram/Holograms/holograms.json", function(text){
     var data = JSON.parse(text);
     data.forEach(element => {
         let html = "<div class='btnHolo' dest='"+element.file+"'>"+element.name+"</div>"
@@ -31,7 +31,7 @@ readTextFile("Holograms/holograms.json", function(text){
     $('.btnHolo').click(function(e){
         let Holo = e.target.getAttribute('dest');
         console.log(Holo)
-        $('.defHolo').attr('src', 'Holograms/'+Holo)
+        $('.defHolo').attr('src', '/Client/Hologram/Holograms/'+Holo)
         // $('#videoTop').load()
         // $('#videoRight').load()
         // $('#videoBottom').load()
