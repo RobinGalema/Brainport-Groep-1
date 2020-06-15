@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Holo Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../Client/Hologram/style.css'>
+    
+</head>
+
+
+<body>
+    <div id='previewScreens-Wrap'>
+        <div class='previewScreen'>
+            <div class='PreviewTitle'>
+                Voorbeeld Hologram
+            </div>
+            <div style='width:250px;'>
+                Uw geuploade hologram moet er uit komen te zien zoals het hologram hieronder.
+            </div>
+            <div id='holoPreview'>
+                <div class='holoPreview-Screen'>
+                    <video class='holoVideo' id='videoTop' loop autoplay muted>
+                        <source   src="../../Client/Hologram/Holograms/trucks2_0.mp4" type="video/mp4" />
+                    </video> 
+                </div>
+                <div id='holoPreview-horiz'>
+                    <div class='holoPreview-Screen'>
+                        <video class='holoVideo' id='videoLeft' loop autoplay muted>
+                            <source   src="../../Client/Hologram/Holograms/trucks2_0.mp4" type="video/mp4" />
+                        </video> 
+                    </div>
+                    <div class='holoPreview-Screen'>
+                        <video class='holoVideo' id='videoRight' loop autoplay muted>
+                            <source   src="../../Client/Hologram/Holograms/trucks2_0.mp4" type="video/mp4" />
+                        </video> 
+                    </div>
+                </div>
+                <div class='holoPreview-Screen'>
+                    <video class='holoVideo' id='videoBottom' loop autoplay muted>
+                        <source   src="../../Client/Hologram/Holograms/trucks2_0.mp4" type="video/mp4" />
+                    </video> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='uploadHologram-Wrap'>
+        
+        <form id='myForm' name='Form' action="fileupload" method="post" enctype="multipart/form-data">
+            <h3>Upload hologram video</h3>
+            <input type='text' placeholder="Naam" name='name'>
+            <input type="file" name="filetoupload" accept="video/*"><br>
+            <input id="button" value='Upload' type="submit">
+        </form>
+
+        <div style='width:100%;'>
+            <h3>Delete hologram video</h3>
+        <select id='deleteSelection'>
+
+        </select>
+        <div id='btnDelete'>
+            Verwijder
+        </div>
+        </div>
+        
+    </div>
+
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src='HologramDashboard/script.js'></script>
+</html>

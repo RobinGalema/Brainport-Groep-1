@@ -1,0 +1,17 @@
+body{
+    margin:0;
+}
+
+#BlackScreen
+{
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    z-index:1;
+    position: absolute;
+}
+
+.toggledOff
+{
+    display: none;
+}

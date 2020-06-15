@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  
+</head>
+<body>
+
+    <div class="Screen" id="screen1">
+        <div class="HeadWrap">
+        <div class="screentitle">Screen 1</div>
+        <form action="fileupload" method="post" enctype="multipart/form-data">
+            <input type="file" name="filetoupload"><br>
+            <input id="button" type="submit">
+        </form>
+        </div>
+        <video width="100%" height="auto" controls>
+            <source src="/uploads/Screen1/Video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="Screen" id="screen2">
+        <div class="screentitle">Screen 2</div>
+        <video width="100%" height="auto" controls>
+            <source src="/uploads/Screen2/Video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="Screen" id="screen3">
+        <div class="screentitle">Screen 3</div>
+        <video width="100%" height="auto" controls>
+            <source src="/uploads/Screen3/Video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="Screen" id="screen4">
+        <div class="screentitle">Screen 4</div>
+        <video width="100%" height="auto" controls>
+            <source src="/uploads/Screen4/Video.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src='script.js'></script>
+
+</html>
