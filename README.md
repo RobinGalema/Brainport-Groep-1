@@ -18,7 +18,7 @@ For all the three parts of this repository there will be a seperate .readme incu
 
 ## Collaborators
 
-**Robin Galema** - Beheerder GitHub Repo - https://github.com/RobinGalema  
+**Robin Galema** - Owner GitHub Repo & Team member - https://github.com/RobinGalema  
 **Thomas Dwarshuis** - Team member - https://github.com/ThomasHBOICT  
 **Daan Bankers** - Team member - https://github.com/daanbankers1  
 **Charly Vos** - Team member - https://github.com/Charlyvos  
