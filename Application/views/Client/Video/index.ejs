@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>VideoDash</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../blackScreen.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    <div id="BlackScreen"></div>
-</body>
-    <script src='../screenControl.js'></script>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive-video</title>
+        <link rel="stylesheet" href="../Client/Video/style/style.css">
+    </head>
+    <body>
+        <video id="v0"muted autoplay controls>
+            <source type="video/mp4" src=""></source>
+        </video>
+
+        <div class="content">
+            <div class="section" id="one">
+            </div>
+            <div class="section" id="two">
+            </div>
+            <div class="section"  id="three">
+            </div>
+            <div class="section"  id="four">
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript" src="../Client/Video/scripts/videoControl.js"></script>
+    <script src="../Client/Video/scripts/main.js"></script>
 </html>

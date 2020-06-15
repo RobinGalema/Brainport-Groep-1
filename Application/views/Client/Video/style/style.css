@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: arial;
+    font-size: 16pt;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#v0 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%; 
+    z-index: -1;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    min-width: 100%; 
+    min-height: 90vh;
+  }
+
+  .section {
+      margin: 5px;
+      padding: 40px;
+      background-color: #1a1a1a;
+      opacity: 90%; /* change to background opacity */
+      color: white;
+      visibility: hidden;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24pt;
+  }
+
+  #four {
+    background-color: white;
+    color: black;
+  }

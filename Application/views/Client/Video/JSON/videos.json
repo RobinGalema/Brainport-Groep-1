@@ -1,0 +1,79 @@
+{
+    "videos" : 
+    [
+        {
+            "id" : 0,
+            "filename" : "Work at Brainport.mp4",
+            "options" : [
+                {
+                    "type" : "rewatch",
+                    "text" : "Rewatch the video",
+                    "linkFilename" : "Work at Brainport.mp4"
+                },
+                {
+                    "type" : "video-link",
+                    "text" : "Get to know more about how Brainport helps during the Corona crisis.",
+                    "linkFilename": "Corona-brainport.mp4"
+                },
+                {
+                    "type" : "video-link",
+                    "text" : "Get to know more how Brainport help charity",
+                    "linkFilename" : "Donatie-brainport.mp4"
+                },
+                {
+                    "type" : "qrCode",
+                    "text" : "Scan the QR-code for more info"
+                }
+            ]
+        },
+        {
+            "id" : 1,
+            "filename" : "Corona-brainport.mp4",
+            "options" : [
+                {
+                    "type" : "rewatch",
+                    "text" : "Rewatch the video",
+                    "linkFilename" : "Corona-brainport.mp4"
+                },
+                {   "type" : "video-link",
+                    "text" : "See how you can start working at Brainport",
+                    "linkFilename": "Work at Brainport.mp4"
+                },
+                {
+                    "type" : "video-link",
+                    "text" : "Get to know more how Brainport help charity",
+                    "linkFilename" : "Donatie-brainport.mp4"
+                },
+                {
+                    "type" : "qrCode",
+                    "text" : "Scan the QR-code for more info"
+                }
+            ]
+        },
+        {
+            "id" : 2,
+            "filename" : "Donatie-brainport.mp4",
+            "options" : [
+                {
+                    "type" : "rewatch",
+                    "text" : "Rewatch the video",
+                    "linkFilename" : "Donatie-brainport.mp4"
+                },
+                {
+                    "type" : "video-link",
+                    "text" : "See how you can start working at Brainport",
+                    "linkFilename": "Work at Brainport.mp4"
+                },
+                {
+                    "type" : "video-link",
+                    "text" : "Get to know more about how Brainport helps during the Corona crisis.",
+                    "linkFilename" : "Corona-brainport.mp4"
+                },
+                {
+                    "type" : "qrCode",
+                    "text" : "Scan the QR-code for more info"
+                }
+            ]
+        }
+    ]
+}
