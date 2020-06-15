@@ -1,22 +1,22 @@
 # Brainport Maps
 
-Deze Brainport kaart is een kaart met startups uit de Brainport regio
+Brainport Maps is an interactive map with startups from the Brainport region
 ## Installation
 
-Download de repository en open de map in je code editor
+Download the repository and open the map in your code editor
 
 ## Usage
 
-De map module gebruikt drie functies:
+The map module uses three functions:
  * setupMenu
  * openMenu
  * closeMenu
 
-setupMenu wordt gebruikt om het menu met filters en informatie blokken te genereren op basis van de JSON data.
+setupMenu is used to generate the menu with filters and info block based on JSON data input
 
-openMenu opent het menuscherm.
+openMenu opens the menu screen
 
-closeMenu sluit het menuscherm.
+closeMenu closes the menu screen
 
 ## Contributing
 
