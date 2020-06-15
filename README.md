@@ -1,17 +1,23 @@
 # Brainport-Groep-1
 
-## Beschrijving
-Dit is de GitHub repo voor ons project in semester 4 voor Partout.
+## General Discription
 
-In deze repo ontwikkelen wij de techniek achter het Brainport Eindhoven mini-museum dat ervoor moet zorgen dat Brainport Eindhoven bekendheid creeërt. 
+This repository is a collection of prototypes made for the Brainport Eindhoven school project and the central application including these various prototypes.
 
-## Benodigdheden
-Op dit moment is er nog niets specifieks nodig om aan dit project te werken.
+The protoypes in this repository are all part of the Brainport Mini-Museum which is a small sized information pillar including loads of information about Brainport Eindhoven. The prototypes in this repo will be displayed on the museum on seperate screens and the main application will controll all the smaller prototypes.
 
-## Prototypes
-In de Prototypes map zijn diverse prototypes voor het concept te vinden. Momenteel staan hier alleen nog een aantal visuele prototypes in maar zodra we gaan beginnen met de development van onze centrale applicatie zijn deze hier ook te vinden.
 
-## Auteurs
+## What is in this repository?
+
+This repository consist of 3 seperate parts; The central application of the museum, the individual prototypes and a 3D model in ThreeJS with the folders inside the repository named accordingly.
+
+### Specific information
+
+For all the three parts of this repository there will be a seperate .readme inculded in each of the folders in the root of the repo in which there will be more detailed information about this part of the project complete with installation instructions if needed.
+
+
+## Collaborators
+
 **Robin Galema** - Beheerder GitHub Repo - https://github.com/RobinGalema  
 **Thomas Dwarshuis** - Team member - https://github.com/ThomasHBOICT  
 **Daan Bankers** - Team member - https://github.com/daanbankers1  
