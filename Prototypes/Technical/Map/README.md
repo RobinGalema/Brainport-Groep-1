@@ -3,7 +3,7 @@
 Brainport Maps is an interactive map with startups from the Brainport region
 ## Installation
 
-Download the repository and open the map in your code editor
+Download the repository and open the folder in your code editor
 
 ## Usage
 
