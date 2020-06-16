@@ -5,8 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Interactive-video</title>
         <link rel="stylesheet" href="../Client/Video/style/style.css">
+        <link rel="stylesheet" href="Client/blackScreen.css">
     </head>
     <body>
+        <div id="BlackScreen"></div>
         <video id="v0"muted autoplay controls>
             <source type="video/mp4" src=""></source>
         </video>
@@ -25,4 +27,6 @@
 
     <script type="text/javascript" src="../Client/Video/scripts/videoControl.js"></script>
     <script src="../Client/Video/scripts/main.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/Client/screenControl.js"></script>
 </html>
