@@ -16,7 +16,7 @@ The map module uses three functions:
 ``` Menu.OpenMenu() ``` opens the menu screen
 
 
-``` Menu.CloseMenu(); ``` closes the menu screen
+``` Menu.CloseMenu() ``` closes the menu screen
 
 ## Contributing
 
