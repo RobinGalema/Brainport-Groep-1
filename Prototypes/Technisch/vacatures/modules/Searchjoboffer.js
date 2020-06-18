@@ -6,25 +6,28 @@ const Searchjoboffer = (function () {
 
     const init = (submitElementId) => {
         submitElement = document.getElementById(submitElementId);
-        submitElement.addEventListener("click", searchJobOffer);
-        userInput = document.getElementById('inputSearch').value;
+        submitElement.addEventListener("click", () => {
+          userInput = document.getElementById('inputSearch').value; //your input field id
+          searchJobOffer(userInput);
+        });
+        outputElement = document.getElementById('output'); //your output container id
     }
 
-    const searchJobOffer = (userInputValue) => {
-        console.log("test");
-        
+    const searchJobOffer = async (userInputValue) => {
         htmlString = "";   //reset the output string empty
       
-        fetch('../vacatures/data.json') //get data from json
+        await fetch('../vacatures/data.json') //get data from json
         .then((res) => res.json()) //format JSON
         .then((json) => json.companies.forEach(element => { //for each company in the json >
           if (element.city == userInputValue) { //Check which company match with the user input
-            element.joboffer.forEach(element => { //for each matched company > job offers > 
-              htmlString += `<div class='vacature'><div class='info'><h2>${element.title}</h2><p>${element.description}</p> <p>Salary: ${element.salary}</p></div></div>`; // set the string with data from json
-              $('#output').html(htmlString); //show the output on the front-end              
-            });
+            if (element.joboffer) {
+              element.joboffer.forEach(element => { //for each matched company > job offers > 
+                htmlString += `<div class='jobOffer'><div class='info'><h2>${element.title}</h2><p>${element.description}</p> <p>Salary: ${element.salary}</p></div></div>`; // set the string with data from json
+                $(outputElement).html(htmlString); //show the output on the front-end              
+              });
+            }
         }}))
       }
 
-    return { init}
+    return {init}
 })();
