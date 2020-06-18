@@ -11,7 +11,7 @@
   body {font-family: NittiEindhovenLight;}
   h1, h2, h3 {font-family: NittiEindhovenBlack;}
 
-  .vacature {
+  .jobOffer {
     border: 1px solid black;
     margin: 0 2% 20px 0;
     width: 20%;
@@ -19,7 +19,7 @@
     padding: 5px;
 }
 
-.vacature:nth-of-type(4n+4){
+.jobOffer:nth-of-type(4n+4){
     margin: 0 0 20px 0;
 }
 
