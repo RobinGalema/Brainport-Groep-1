@@ -1,5 +1,4 @@
 const Searchjoboffer = (function () {
-    let dataset;
     let submitElement;
     let htmlString;
     let userInput;
