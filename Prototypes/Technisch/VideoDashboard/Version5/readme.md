@@ -50,8 +50,8 @@ Because the function will use the click event of a certain button.
 
 What the function does is get the url out of the input field and push it into an array, and find which screen the video is for.  
 Then it sends an array through socket with data ['iframeID','link'] and name 'newVideo' to the server.   
-So if the server gets newVideo through socket, it will insert it in the database through this piece of code.    
-**html form code** 
+So if the server gets newVideo through socket, it will insert it in the database through this piece of code.        
+**html form code**  
 Make sure the form used is built up like this.    
 *id of the first input field is link+'the same number used in the dest of submitbutton'*      
 
