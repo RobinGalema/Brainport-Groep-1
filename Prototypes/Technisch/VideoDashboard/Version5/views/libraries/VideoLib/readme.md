@@ -16,28 +16,28 @@ link: This has the unique youtube video id in it, thats the part after v=
 create a database first and link it in nodejs, get the cluster url and put in in the code  
 const url = "mongodb+srv://username:password@cluster0-ybw87.mongodb.net/test?retryWrites=true&w=majority";   
 
+## Functions ##  
+**You can load the Page with videoLoader().loadPage()**  
+This function only sends a message 'loadVideos' through socket, this means that the server side does the rest.   
 
-<b>You can load the Page with videoLoader().loadPage()</b><br>
-This functions only sends a message 'loadVideos' through socket, this means that the server side does the rest.<br><br>
-
-<i>This is the server side function</i><br>
+*This is the server side function*
 ```
-//Getting all videos from database<br>
-let getVideos = () => {<br>
-    //Connecting to database<br>
-    MongoClient.connect(url, function(err, db) {<br>
-        if (err) throw err;<br>
-        var dbo = db.db(<Your database name>);<br>
-        //Finding all videos in database<br>
-        dbo.collection(<Your database collection name>).find({}).toArray(function(err, result) {<br>
-            if (err) throw err;<br>
-            let videos = result<br>
-            //Sending to client<br>
-            io.emit('VideoArray', videos );   <b>!!MAKE SURE THE EMIT IS CALLED 'VideoArray'!!</b><br>
-            db.close();<br>
-          });<br>
-      });<br>
-}<br><br>
+//Getting all videos from database  
+let getVideos = () => {  
+    //Connecting to database  
+    MongoClient.connect(url, function(err, db) {  
+        if (err) throw err;  
+        var dbo = db.db(<Your database name>);  
+        //Finding all videos in database  
+        dbo.collection(<Your database collection name>).find({}).toArray(function(err, result) {  
+            if (err) throw err;  
+            let videos = result  
+            //Sending to client  
+            io.emit('VideoArray', videos );   **!!MAKE SURE THE EMIT IS CALLED 'VideoArray'!!**    
+            db.close();  
+          });  
+      });  
+}    
 ```
 
 <b>You can reload the page with videoLoader().reloadPage()</b><br>
