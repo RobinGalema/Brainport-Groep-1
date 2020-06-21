@@ -1,20 +1,20 @@
-#ReadMe Video Library#
+# ReadMe Video Library #   
 **VideoLib makes use of socket, to connect with the server.**<br><br>
 
 With videoLoader you can do a couple of things.   
 
-In the html the iframe id's all should be a certain 'video' with a number behind it.   
+*In the html the iframe id's all should be a certain 'video' with a number behind it.*     
+## MongoDB Setup ##
+The mongoDB database setup for this library is fairly easy.  
+It just needs 3 fields, the id, iframeID and name.  
+id: the unique id mongoDB makes for a field.  
+iframeID: iframeID has multiple functions:  
+           &emsp; 1. it has the same id in it as te iframe you want the video in at the dashboard.  
+            &emsp;2. the <title> of each seperate screen should be the same as the iframeID  
+link: This has the unique youtube video id in it, thats the part after v=   
 
-The mongoDB database setup for this library is fairly easy.<br>
-It just needs 3 fields, the id, iframeID and name.<br>
-id: the unique id mongoDB makes for a field.<br>
-iframeID: iframeID has multiple functions:<br>
-           &emsp; 1. it has the same id in it as te iframe you want the video in at the dashboard.<br>
-            &emsp;2. the <title> of each seperate screen should be the same as the iframeID<br>
-link: This has the unique youtube video id in it, thats the part after v=<br><br>
-
-create a database first and link it in nodejs, get the cluster url and put in in the code<br>
-const url = "mongodb+srv://username:password@cluster0-ybw87.mongodb.net/test?retryWrites=true&w=majority";<br><br>
+create a database first and link it in nodejs, get the cluster url and put in in the code  
+const url = "mongodb+srv://username:password@cluster0-ybw87.mongodb.net/test?retryWrites=true&w=majority";   
 
 
 <b>You can load the Page with videoLoader().loadPage()</b><br>
