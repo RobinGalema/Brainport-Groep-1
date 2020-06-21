@@ -1,8 +1,9 @@
-VideoLib makes use of socket, to connect with the server.<br><br>
+#ReadMe Video Library#
+**VideoLib makes use of socket, to connect with the server.**<br><br>
 
-With videoLoader you can do a couple of things<br><br>
+With videoLoader you can do a couple of things.   
 
-In the html the iframe id's all should be a certain 'video' with a number behind it.<br><br>
+In the html the iframe id's all should be a certain 'video' with a number behind it.   
 
 The mongoDB database setup for this library is fairly easy.<br>
 It just needs 3 fields, the id, iframeID and name.<br>
