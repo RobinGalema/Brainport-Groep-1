@@ -1,11 +1,11 @@
 @font-face {
     font-family: NittiEindhovenBlack;
-    src: url(font/NittiEindhoven-Black-v20.otf);
+    src: url(../font/NittiEindhoven-Black-v20.otf);
   }
 
   @font-face {
     font-family: NittiEindhovenLight;
-    src: url(font/NittiEindhoven-Light-v20.otf);
+    src: url(../font/NittiEindhoven-Light-v20.otf);
   }
 
   body {font-family: NittiEindhovenLight;}
