@@ -3,7 +3,7 @@ const Searchjoboffer = (function () {
     let htmlString;
     let userInput;
 
-    const init = (submitElementId, inputSearchValue, outputId) => {
+    const init = (submitElementId = "submitSearch", inputSearchValue = "inputSearch", outputId = "output") => {
         submitElement = document.getElementById(submitElementId);
         submitElement.addEventListener("click", () => {
           userInput = document.getElementById(inputSearchValue).value; //your input field id
