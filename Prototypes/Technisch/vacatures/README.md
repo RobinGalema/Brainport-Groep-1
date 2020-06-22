@@ -16,15 +16,13 @@ Application that searches for job offers in the area Brainport Eindhoven by loca
       <div id="output"></div>
     </div>
 ```
-3. In the module change the id's on line 9 and 12 to your chosen id's.
-```javascript
-        userInput = document.getElementById('inputSearch').value; //your input field id
-        outputElement = document.getElementById('output'); //your output container id
-```
-4. Back to your HTML file, run the script:
+3. Back to your HTML file, run the script: and give the following id's as parameter:
+- Your submit button
+- Your input field 
+- The div that outputs the results
 ```html
     <script>
-      Searchjoboffer.init("submitSearch"); //your submit button id
+      Searchjoboffer.init("submitSearch", "inputSearch", "output"); // * By default it gives the following parameters
     </script>
 ```
 
