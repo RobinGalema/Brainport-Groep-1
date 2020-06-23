@@ -48,7 +48,7 @@ let Init = () => {
 
   // loader
   let loader = new THREE.GLTFLoader();
-  loader.load("minimuseum21.gltf", function (gltf) {
+  loader.load("minimuseum22.gltf", function (gltf) {
     let museum = gltf.scene;
     museum.scale.set(-1, -2, 1);
     museum.position.y = 45;
