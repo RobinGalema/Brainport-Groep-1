@@ -48,6 +48,7 @@ app.post('/fileupload', function(req,res){
  setTimeout(createJSON, 500)
 })
 
+//Function for rewriting JSON file
 let createJSON = () => {
   //Read jsonfile with all holograms
   fs.readFile('Views/Holograms/holograms.json', 'utf8', function readFileCallback(err, data){
