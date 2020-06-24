@@ -53,7 +53,9 @@ io.sockets.on('connection', (socket) => {
     })
 });
 
-//Getting all videos from database
+/**
+ * Gets all videos from database
+ */
 let getVideos = () => {
     //Connecting to database
     MongoClient.connect(url, function(err, db) {
@@ -70,7 +72,10 @@ let getVideos = () => {
       });
 }
 
-//Inserting filled in video in database
+/**
+ * This function pushes a new video for a screen to the database
+ * @param {Array} data - Array received through socket with data for video
+ */
 let insertVideo = (data) => {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
@@ -88,7 +93,10 @@ let insertVideo = (data) => {
       io.emit('ReloadDash')
 }
 
-//For each different screen get video
+/**
+ * This function gets a video for a certain screen, if client screen is opened.
+ * @param {string} data - This is the iframe id that we got through socket.
+ */
 let getCertainVideo = (data)=>{
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
