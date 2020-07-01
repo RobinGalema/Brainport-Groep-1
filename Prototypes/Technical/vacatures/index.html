@@ -6,9 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+  <script type="text/javascript" src="resources/js/lib/Searchjoboffer.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <title>Vacatures</title>
+  <title>Job offers</title>
 </head>
 
 <body>
@@ -19,11 +20,13 @@
     </form>
 
     <div id="containerOutput">
-      <h1 id="outputTitle">Vacatures</h1>
+      <h1 id="outputTitle">Job offers</h1>
       <div id="output"></div>
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script>
+      Searchjoboffer.init("submitSearch", "inputSearch", "output");
+    </script>
 </body>
 
 </html>
