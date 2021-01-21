@@ -13,6 +13,6 @@
     "johnny-five": "^1.4.0",
     "jscs": "^3.0.7",
     "nodebots-interchange": "^2.0.1",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
